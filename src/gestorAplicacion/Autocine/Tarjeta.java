@@ -57,7 +57,7 @@ public class Tarjeta {
 	}
 	
 	public String toString() {
-		return "C.C: " + cedula;
+		return "Cedula: " + cedula;
 	}
 	
 }
