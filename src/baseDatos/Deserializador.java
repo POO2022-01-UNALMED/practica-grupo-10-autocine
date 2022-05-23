@@ -9,9 +9,9 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import gestorAplicacion.personal.Dependiente;
-import gestorAplicacion.personal.Empleado;
-import gestorAplicacion.personal.Tecnico;
+import gestorAplicacion.Personal.Dependiente;
+import gestorAplicacion.Personal.Empleado;
+import gestorAplicacion.Personal.Tecnico;
 import gestorAplicacion.tienda.Bodega;
 import gestorAplicacion.tienda.CajaRegistradora;
 import gestorAplicacion.tienda.Cliente;
