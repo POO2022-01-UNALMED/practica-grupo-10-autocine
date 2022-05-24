@@ -31,7 +31,12 @@ public class Tarjeta implements Serializable{
 	// Constructores.
 	public Tarjeta(String cedula, double saldo) {
 		this.cedula = cedula;
-		this.saldo = saldo;	
+		this.saldo = saldo;
+		tarjetas.add(this);
+	}
+	
+	public Tarjeta() {
+		this("", 0);
 	}
 
 	// Getters and Setters.

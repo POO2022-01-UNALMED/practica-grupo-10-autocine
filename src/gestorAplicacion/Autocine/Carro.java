@@ -26,6 +26,11 @@ public class Carro implements Serializable {
 	// Constructor.
 	public Carro(String placa) {
 		this.placa = placa;
+		carros.add(this);
+	}
+	
+	public Carro() {
+		this("");
 	}
 
 	// Getters and Setters.
