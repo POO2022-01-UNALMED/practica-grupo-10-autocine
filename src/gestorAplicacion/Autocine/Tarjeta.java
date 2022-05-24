@@ -1,7 +1,23 @@
 package gestorAplicacion.Autocine;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+
+/**
+ * 
+ * @author Jhon Ever Gallego Atehortua.
+ * @summary Clase tarjeta.
+ */
+
 // Clase.
-public class Tarjeta { 
+public class Tarjeta implements Serializable{ 
+	
+	// Serializacion.
+	private static final long serialVersionUID = 1L;
+	private static ArrayList<Tarjeta> tarjetas;
+	static {
+		tarjetas = new ArrayList<Tarjeta>();
+	}
 	
 	// Constantes.
 	public static final double CARGA_INICIAL = 50000;
@@ -30,6 +46,12 @@ public class Tarjeta {
 	}
 	public void setSaldo(double saldo) {
 		this.saldo = saldo;
+	}
+	public static ArrayList<Tarjeta> getTarjetas() {
+		return tarjetas;
+	}
+	public static void setTarjetas(ArrayList<Tarjeta> tarjetas) {
+		Tarjeta.tarjetas = tarjetas;
 	}
 	
 	// Metodos.
