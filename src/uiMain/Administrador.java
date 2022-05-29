@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 import baseDatos.Deserializador;
 import baseDatos.Serializador;
-import gestorAplicacion.Personal.*;
 import gestorAplicacion.tienda.*;
 
 import java.io.IOException;

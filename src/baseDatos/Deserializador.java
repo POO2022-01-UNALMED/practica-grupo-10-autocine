@@ -1,6 +1,5 @@
 package baseDatos;
 
-import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -9,9 +8,9 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import gestorAplicacion.Personal.Dependiente;
-import gestorAplicacion.Personal.Empleado;
-import gestorAplicacion.Personal.Tecnico;
+import gestorAplicacion.Persona.Dependiente;
+import gestorAplicacion.Persona.Empleado;
+import gestorAplicacion.Persona.Tecnico;
 import gestorAplicacion.tienda.Bodega;
 import gestorAplicacion.tienda.CajaRegistradora;
 import gestorAplicacion.tienda.Cliente;
