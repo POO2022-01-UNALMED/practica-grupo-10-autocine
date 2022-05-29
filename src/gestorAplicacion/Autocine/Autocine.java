@@ -41,7 +41,8 @@ public class Autocine implements Serializable {
 	 * 
 	 * @param mes
 	 * @param dia
-	 * @summary Recibe un mes y un dia. Retorna una lista de salas que esten disponibles.
+	 * @summary Recibe un mes y un dia.
+	 * @return Una lista de salas disponibles.
 	 */
 	public ArrayList<Sala> salasDisponibles(int mes, int dia) {
 		ArrayList<Sala> disponibles = new ArrayList<>();
@@ -58,7 +59,8 @@ public class Autocine implements Serializable {
 	 * @param pelicula
 	 * @param dia
 	 * @param mes
-	 * @summary Recibe una pelicula, un dia y mes. Retorna una lista de funciones disponibles.
+	 * @summary Recibe una pelicula, un dia y mes. 
+	 * @return Una lista de funciones disponibles.
 	 */
 	public ArrayList<Funcion> verFuncion(Pelicula pelicula, int dia, int mes) {
 		ArrayList<Funcion> funciones = new ArrayList<Funcion>();

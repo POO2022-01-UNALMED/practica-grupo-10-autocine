@@ -36,7 +36,8 @@ public class Sala3D extends Sala implements Serializable {
 	// Metodos.
 	/**
 	 * 
-	 * @summary Devuelve la cantidad de puestos disponibles para la creacion de una funcion.
+	 * @summary Da la cantidad de puestos disponibles para su creacion segun la disponibilidad de gafas 3D.
+	 * @return La cantidad de puestos disponibles para la creacion de una funcion.
 	 */
 	public int cantidadPuestos() {
 		int totalpuestos = puestos.size();
@@ -49,7 +50,7 @@ public class Sala3D extends Sala implements Serializable {
 	
 	/**
 	 * 
-	 * @summary Metodo que crear los puestos dependiendo la cantidad de filas y columnas.
+	 * @summary Metodo para crear los puestos dependiendo la cantidad de filas y columnas.
 	 */
 	public void crearPuestos() {
 		int total = filas*columnas;

@@ -22,6 +22,11 @@ public class Funcion implements Serializable {
 	
 	
 	// Enum Horario.
+	/**
+	 * 
+	 * @summary Enum con los horarios.
+	 *
+	 */
 	public enum Horario{
 		UNO("12:00"), DOS("14:00"), TRES("16:00"), CUATRO("18:00"), CINCO("20:00"), SEIS("22:00");
 		private String hora;
@@ -89,7 +94,8 @@ public class Funcion implements Serializable {
 	 * @param pelicula
 	 * @param num_sala
 	 * @param autocine
-	 * @summary Recibe una fecha: (dia, mes, horario), pelicula, numero de sala y el autocine. Retorna una funcion.
+	 * @summary Recibe una fecha: (dia, mes, horario), pelicula, numero de sala y el autocine. 
+	 * @return Una funcion para una pelicula.
 	 */
 	public static Funcion crearFuncion(int dia, int mes, Horario horario, Pelicula pelicula, int num_sala, Autocine autocine) {
 		Sala sala = Autocine.buscarSala(num_sala);
@@ -130,7 +136,8 @@ public class Funcion implements Serializable {
 	
 	/**
 	 * 
-	 * @summary Metodo que retorna la disponibilidad de un puesto y su tipo.
+	 * @summary Metodo que se encarga de la disponibilidad de un puesto en una sala.
+	 * @return La disponibilidad de un puesto y su tipo.
 	 */
 	public String verDisponiblidad() {
 		ArrayList<ArrayList<String>> total = new ArrayList<ArrayList<String>>();
@@ -164,7 +171,8 @@ public class Funcion implements Serializable {
 	 * 
 	 * @param width
 	 * @param s
-	 * @summary Metodo que centra un String s a una cantidad de caracteres minima. Retorna el String centrado.
+	 * @summary Metodo que centra un String s a una cantidad de caracteres minima. 
+	 * @return El String centrado.
 	 */
 	public static String centerString(int width, String s) {
 		return String.format("%-" + width + "s", String.format("%" + (s.length() + (width - s.length()) / 2) + "s", s));
@@ -175,7 +183,8 @@ public class Funcion implements Serializable {
 	 * 
 	 * @param ticket
 	 * @param cliente
-	 * @summary Recibe ticket para cambiar su estado y cliente al que se le asigna. Metodo para vender un ticket.
+	 * @summary Recibe ticket para cambiar su estado y un cliente al cual se le asigna. Metodo para vender un ticket.
+	 * @return Un Boolen de si se pudo o no vender un ticket. Retorna True o False segun sea el caso.
 	 */
 	public Boolean ventaTicket(Ticket ticket, Cliente cliente) {
 		if(ticket.isDisponibilidad() == true && cliente.getEdad() >= this.getPelicula().getClasificacion()) {
