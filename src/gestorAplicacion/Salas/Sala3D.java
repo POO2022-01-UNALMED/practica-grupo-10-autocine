@@ -4,7 +4,6 @@ import java.io.Serializable;
 import gestorAplicacion.Autocine.*;
 
 /**
- * 
  * @author Jhon Ever Gallego Atehortua.
  * @param Clase Sala3D.
  * @summary Clase que que hereda de la Clase Sala. En esta se crean los puestos para la Sala 3D.
@@ -13,14 +12,11 @@ import gestorAplicacion.Autocine.*;
 // Clase.
 public class Sala3D extends Sala implements Serializable {
 	
-	
 	// Serializacion.
 	private static final long serialVersionUID = 1L;
 	
-	
 	// Atributos.
 	private int cantidadGafas;
-	
 	
 	// Contructores.
 	public Sala3D(int filas, int columnas, int cantidadGafas, Autocine autocine) {
@@ -32,10 +28,8 @@ public class Sala3D extends Sala implements Serializable {
 		this(filas, columnas, filas*columnas, autocine);
 	}
 	
-	
 	// Metodos.
 	/**
-	 * 
 	 * @summary Da la cantidad de puestos disponibles para su creacion segun la disponibilidad de gafas 3D.
 	 * @return La cantidad de puestos disponibles para la creacion de una funcion.
 	 */
@@ -48,8 +42,7 @@ public class Sala3D extends Sala implements Serializable {
 	}
 	
 	
-	/**
-	 * 
+	/** 
 	 * @summary Metodo para crear los puestos dependiendo la cantidad de filas y columnas.
 	 */
 	public void crearPuestos() {
@@ -69,7 +62,6 @@ public class Sala3D extends Sala implements Serializable {
 	public void setCantidadGafas(int cantidadGafas) {
 		this.cantidadGafas = cantidadGafas;
 	}
-	
 	
 	
 }

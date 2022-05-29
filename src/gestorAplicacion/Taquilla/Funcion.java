@@ -7,7 +7,6 @@ import gestorAplicacion.Persona.*;
 import gestorAplicacion.Salas.*;
 
 /**
- * 
  * @author Jhon Ever Gallego Atehortua.
  * @param Clase Funcion.
  * @summary Clase que representa la funcion en la que se da una pelicula.
@@ -16,10 +15,8 @@ import gestorAplicacion.Salas.*;
 // Clase.
 public class Funcion implements Serializable {
 	
-	
 	// Serializacion.
 	private static final long serialVersionUID = 1L;
-	
 	
 	// Enum Horario.
 	/**
@@ -31,7 +28,6 @@ public class Funcion implements Serializable {
 		UNO("12:00"), DOS("14:00"), TRES("16:00"), CUATRO("18:00"), CINCO("20:00"), SEIS("22:00");
 		private String hora;
 
-		
 		private Horario(String hora) {
 			this.setHora(hora);
 		}
@@ -55,7 +51,6 @@ public class Funcion implements Serializable {
 		}
 	}
 	
-	
 	// Atributos.
 	private int dia;
 	private int mes;
@@ -67,7 +62,6 @@ public class Funcion implements Serializable {
 	private int cantidadTicketsVendidos = 0;
 	private static int cantidadFunciones;
 	private int numero;
-	
 	
 	// Contructor.
 	private Funcion(int dia, int mes, Horario horario, Pelicula pelicula, Sala sala, Autocine autocine) {
@@ -84,10 +78,8 @@ public class Funcion implements Serializable {
 		cantidadFunciones ++;
 	}
 	
-	
 	// Metodos.
 	/**
-	 * 
 	 * @param dia
 	 * @param mes
 	 * @param horario
@@ -114,7 +106,6 @@ public class Funcion implements Serializable {
 	
 	
 	/**
-	 * 
 	 * @summary Metodo que se encarga de crear un boleto para cada puesto.
 	 */
 	public void crearTicket() {
@@ -135,7 +126,6 @@ public class Funcion implements Serializable {
 	
 	
 	/**
-	 * 
 	 * @summary Metodo que se encarga de la disponibilidad de un puesto en una sala.
 	 * @return La disponibilidad de un puesto y su tipo.
 	 */
@@ -168,7 +158,6 @@ public class Funcion implements Serializable {
 	
 	
 	/**
-	 * 
 	 * @param width
 	 * @param s
 	 * @summary Metodo que centra un String s a una cantidad de caracteres minima. 
@@ -180,7 +169,6 @@ public class Funcion implements Serializable {
 	
 	
 	/**
-	 * 
 	 * @param ticket
 	 * @param cliente
 	 * @summary Recibe ticket para cambiar su estado y un cliente al cual se le asigna. Metodo para vender un ticket.
@@ -265,6 +253,5 @@ public class Funcion implements Serializable {
 		this.numero = numero;
 	}
 
-	
 	
 }
