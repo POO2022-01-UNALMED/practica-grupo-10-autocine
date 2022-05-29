@@ -5,8 +5,6 @@ import gestorAplicacion.Autocine.*;
 
 public class Sala2D extends Sala implements Serializable{
 	private static final long serialVersionUID = 1L;
-
-	private int cantidadGafas;
 	
 	public Sala2D(int filas, int columnas, int filaspreferencial, Autocine cine) {
 		super(filas, columnas, filaspreferencial, 2000, autocine);
