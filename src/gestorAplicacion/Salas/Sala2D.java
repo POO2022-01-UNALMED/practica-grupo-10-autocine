@@ -27,27 +27,24 @@ public class Sala2D extends Sala implements Serializable{
 	/*No recibe ningun parametro y no retorna nada
 	Crea cada puesto según la cantidad de filas prefencial, filas, y columnas*/
 		
-	
-		int total = filas*columnas; 			//numero de puestos
+		int total = filas*columnas; 	//numero de puestos
 
-		int totalpreferencial = filaspreferencial*columnas;		//numero de puestos prefe y se le resta 1 cada que se compre uno
-														
-
-		String tipo = "PREFENCIAL";					//tipo de puesto se cambia  cuando totalprerencial sea = a 0
+		int totalpreferencial = filaspreferencial*columnas; //numero de puestos prefe y se le resta 1 cada que se compre uno
+													
+		String tipo = "PREFENCIAL";
 		
-		for(int i = 0;i<total;i++) {			//for que itera la cantidad de puestos 
+		for(int i = 0;i<total;i++) {	//for que itera la cantidad de puestos 
 			
-			if(totalpreferencial<=0) {					//si se acabaron los preferencial cambia tipo a GENERAL
-				tipo = "GENERAL";
+		   if(totalpreferencial<=0) {	//si se acabaron los preferencial cambia tipo a GENERAL
+			 tipo = "GENERAL";
 			}
-			else {								//sino  se reduce totalpreferencial en uno
-				totalpreferencial--;
+		   else {				//sino  se reduce totalpreferencial en uno
+			 totalpreferencial--;
 			}
 			
-			Puesto puesto = new Puesto(tipo,i+1);	
-												
-
-			puestos.add(puesto);					
+		   Puesto puesto = new Puesto(tipo,i+1);	
+											
+		   puestos.add(puesto);					
 		}
 	}
 
