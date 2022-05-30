@@ -16,11 +16,26 @@ public class Ticket implements Serializable{
 	private Funcion funcion;
 	
 	
-	public void Boleto(Pelicula pelicula, Puesto puesto) {
-		this.pelicula = pelicula;
+	public void Ticket(Funcion funcion, Puesto puesto) {
+		this.funcion = funcion;
 		this.set_puesto(puesto);
 		this.estado = true;
 		this.precio_puesto = this.precio_puesto();
+	}
+	
+	public float calcularPrecio() {		
+		/*No recibe nada y devuelve un float el cual corresponde al calculo del precio del boleto 
+		que depende del precio de la sala y el precio del puesto */
+		
+			float precio_t=funcion.getSala().getPrecio()+precio_silla;	 	// Se suma el precio de la sala y el precio de la silla
+			
+			return precio_t;
+		}
+	
+	public void calcularPrecioDefinitivo(Cliente cliente) {
+		
+		float total= calcularPrecio(); 
+		this.setPrecioTotal(total);				
 	}
 	
 	public String estado() {
