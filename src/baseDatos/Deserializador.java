@@ -86,6 +86,7 @@ public class Deserializador {
 		Deserializador.deserializador(Cliente.getClientes(), "Clientes");
 		Deserializador.deserializador(Ticket.getTicket(), "Tickets");
 		Deserializador.deserializador(Sala2D.getSalas2D(), "Salas 2D");
+		
 	}
 
 	public static Autocine deserializador() {
