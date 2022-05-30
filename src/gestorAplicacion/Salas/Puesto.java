@@ -4,7 +4,11 @@
  * @summary Clase que tiene la imformacion relacionada con los puestos.
  */
 package gestorAplicacion.Salas;
+import gestorAplicacion.Taquilla.Pelicula;
+
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 //clase
 public class Puesto implements Serializable{
@@ -12,6 +16,10 @@ public class Puesto implements Serializable{
     //serializacion
 
     private static final long serialVersionUID = 1L;
+    static List<Puesto> puestos;
+    static {
+        puestos = new ArrayList<Puesto>();
+    }
 
     //tipo
 
@@ -60,5 +68,12 @@ public class Puesto implements Serializable{
     }
     public void setPrecio(float precio) {
         this.precio = precio;
+    }
+    public static List<Puesto> getPuestos() {
+        return puestos;
+    }
+
+    public static void setPuestos(List<Puesto> puestos) {
+        Puesto.puestos = puestos;
     }
 }

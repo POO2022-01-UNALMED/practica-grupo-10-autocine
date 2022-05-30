@@ -6,14 +6,21 @@
 
 package gestorAplicacion.Taquilla;
 import gestorAplicacion.Autocine.Autocine;
+import gestorAplicacion.Salas.Sala;
+
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 // clase
 public class Pelicula implements Serializable {
 
     // serializacion
     private static final long serialVersionUID = 1L;
-
+    static List<Pelicula> peliculas;
+    static {
+        peliculas = new ArrayList<Pelicula>();
+    }
     //artributos
 
     private String nombre;
@@ -69,5 +76,12 @@ public class Pelicula implements Serializable {
     }
     public void setClasificacion(int clasificacion) {
         this.clasificacion = clasificacion;
+    }
+    public static List<Pelicula> getPeliculas() {
+        return peliculas;
+    }
+
+    public static void setPeliculas(List<Pelicula> peliculas) {
+        Pelicula.peliculas = peliculas;
     }
 }

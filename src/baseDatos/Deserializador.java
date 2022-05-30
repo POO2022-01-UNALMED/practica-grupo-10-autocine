@@ -9,8 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import gestorAplicacion.Autocine.Autocine;
+import gestorAplicacion.Salas.Puesto;
+import gestorAplicacion.Salas.Sala;
 import gestorAplicacion.Taquilla.Funcion;
 import gestorAplicacion.Salas.Sala3D;
+import gestorAplicacion.Taquilla.Pelicula;
 import gestorAplicacion.tienda.Bodega;
 import gestorAplicacion.tienda.CajaRegistradora;
 import gestorAplicacion.tienda.Cliente;
@@ -81,9 +84,9 @@ public class Deserializador {
 		Deserializador.deserializador(Autocine.getAutocine(), "Autocine");
 		Deserializador.deserializador(Funcion.getFunciones(), "Funciones");
 		Deserializador.deserializador(Sala3D.getSalas3D(), "Salas 3D");
-		Deserializador.deserializador(Cliente.getClientes(), "Clientes");
-		Deserializador.deserializador(Componente.componentes, "Componentes");
-		Deserializador.deserializador(Producto.productos, "Productos");
+		Deserializador.deserializador(Sala.getSalas(), "Salas");
+		Deserializador.deserializador(Pelicula.getPeliculas(), "Peliculas");
+		Deserializador.deserializador(Puesto.getPuestos(), "Puesto");
 		Deserializador.deserializador(Servicio.getServicios(), "Servicios");
 		Deserializador.deserializador(Bodega.getComponentes(), "Bodega");
 		Deserializador.deserializador(Empleado.getEmpleados(), "Empleados");

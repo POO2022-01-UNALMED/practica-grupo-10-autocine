@@ -7,8 +7,11 @@ import java.io.ObjectOutputStream;
 import java.util.List;
 
 import gestorAplicacion.Autocine.Autocine;
+import gestorAplicacion.Salas.Puesto;
+import gestorAplicacion.Salas.Sala;
 import gestorAplicacion.Taquilla.Funcion;
 import gestorAplicacion.Salas.Sala3D;
+import gestorAplicacion.Taquilla.Pelicula;
 import gestorAplicacion.tienda.Bodega;
 import gestorAplicacion.tienda.CajaRegistradora;
 import gestorAplicacion.tienda.Cliente;
@@ -60,9 +63,9 @@ public class Serializador {
 		Serializador.serializar(Autocine.getAutocine(), "Autocine");
 		Serializador.serializar(Funcion.getFunciones(), "Funciones");
 		Serializador.serializar(Sala3D.getSalas3D(), "Salas 3D");
-		Serializador.serializar(Cliente.getClientes(), "Clientes");
-		Serializador.serializar(Componente.componentes, "Componentes");
-		Serializador.serializar(Producto.productos, "Productos");
+		Serializador.serializar(Sala.getSalas(), "Salas");
+		Serializador.serializar(Pelicula.getPeliculas(), "Peliculas");
+		Serializador.serializar(Puesto.getPuestos(), "Puesto");
 		Serializador.serializar(Servicio.getServicios(), "Servicios");
 		Serializador.serializar(Bodega.getComponentes(), "Bodega");
 		Serializador.serializar(Empleado.getEmpleados(), "Empleados");
