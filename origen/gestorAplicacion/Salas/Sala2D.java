@@ -59,4 +59,7 @@ public class Sala2D extends Sala implements Serializable{
 		salas2D = salas2d;
 	}
 
+
 }
+
+// hola, commit random para salvar la compañía xD
