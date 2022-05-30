@@ -67,4 +67,9 @@ public class Serializador {
 		Serializador.serializar(Ticket.getTicket(), "Tickets");
 		Serializador.serializar(Sala2D.getSalas2D(), "Salas 2D");
 	}
+
+	public static void serializar(Autocine autocine) {
+		// TODO Auto-generated method stub
+		
+	}
 }
