@@ -4,17 +4,19 @@
  * @summary Clase que tiene la imformacion relacionada con las salas.
  */
 package gestorAplicacion.Salas;
+import gestorAplicacion.Autocine.Autocine;
+import gestorAplicacion.Taquilla.Funcion;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 //clase
 
-public abstract class Sala implements Serializable,Agregar{
+public abstract class Sala implements Serializable{
     private static final long serialVersionUID = 1L;
 
 
-    //declaracion de atributos
+    //atributos
     protected int numero;
     protected int filas;
     protected int columnas;
@@ -33,10 +35,10 @@ public abstract class Sala implements Serializable,Agregar{
         this.columnas = columnas;
         this.filasPreferencial = filasvip;
         this.precio=precio;
-        this.Autocine=Autocine;
+        this.Autocine=autocine;
 
 
-        this.crearSilleteria();
+        this.crearPuestos();
 
         Autocine.agregarSala(this);
 
@@ -47,9 +49,9 @@ public abstract class Sala implements Serializable,Agregar{
     //Metodos abtractos
 
 
-//    public abstract int cantidadSillas();
+    public abstract int cantidadPuestos();
 
-    public abstract void crearSilleteria();
+    public abstract void crearPuestos();
 
     //Metodos
 

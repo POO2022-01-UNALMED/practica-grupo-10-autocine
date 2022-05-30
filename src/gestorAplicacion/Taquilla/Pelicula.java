@@ -20,18 +20,18 @@ public class Pelicula implements Serializable {
     private int duracion;
     private String lenguaje;
     private int clasificacion;
-//    private Autocine autocine;
+    private Autocine autocine;
 
 // constructor
 
-    public Pelicula(String nombre, String genero, int duracion, String lenguaje, int clasificacion, Cine cine) {
+    public Pelicula(String nombre, String genero, int duracion, String lenguaje, int clasificacion, Autocine autocine) {
         this.nombre = nombre;
         this.genero = genero;
         this.duracion = duracion;
         this.lenguaje = lenguaje;
         this.clasificacion = clasificacion;//
-//      this.Autocine = autocine;
-//      autocine.agregarPelicula(this);
+        this.Autocine = autocine;
+        autocine.agregarPelicula(this);
     }
 
     // gets y sets
