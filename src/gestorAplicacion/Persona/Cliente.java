@@ -1,7 +1,8 @@
 package gestorAplicacion.Persona;
 import java.io.Serializable;
 import java.util.*;
-import gestorAplicacion.taquilla.*;
+import gestorAplicacion.Taquilla.*;
+import gestorAplicacion.Autocine.*;
 
 
 /**
@@ -30,7 +31,7 @@ public class Cliente implements Serializable {
 	}
 
 	/*Constructores*/
-    public Cliente(String nombre, int edad, int cedula, Autocine autocine) {
+    public Cliente(String nombre, int edad, int id, Autocine autocine) {
         this.nombre = nombre;
         this.edad = edad;
         this.id = id;
@@ -51,7 +52,7 @@ public class Cliente implements Serializable {
 			veces.add(num);
 		}
 		
-		return genreList.get(cuenta.indexOf(Collections.max(cuenta))); 	//se devuelve el genero de la lista que tenga el indice correspondiente al maximo de las ocurrencias de cada genero
+		return genreList.get(veces.indexOf(Collections.max(veces))); 	//se devuelve el genero de la lista que tenga el indice correspondiente al maximo de las ocurrencias de cada genero
 		
 	}
     
