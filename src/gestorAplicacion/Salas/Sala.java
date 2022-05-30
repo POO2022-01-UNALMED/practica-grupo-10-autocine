@@ -35,14 +35,14 @@ public abstract class Sala implements Serializable{
         this.columnas = columnas;
         this.filasPreferencial = filasvip;
         this.precio=precio;
-        this.Autocine=autocine;
+        this.autocine=autocine;
 
 
         this.crearPuestos();
 
-        Autocine.agregarSala(this);
+        autocine.agregarSala(this);
 
-        this.numero = Autocine.getSalas().size();
+        this.numero = autocine.getSalas().size();
     }
 
 

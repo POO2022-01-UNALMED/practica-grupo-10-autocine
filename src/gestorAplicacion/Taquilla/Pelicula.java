@@ -5,6 +5,7 @@
  */
 
 package gestorAplicacion.Taquilla;
+import gestorAplicacion.Autocine.Autocine;
 import java.io.Serializable;
 
 // clase
@@ -29,8 +30,8 @@ public class Pelicula implements Serializable {
         this.genero = genero;
         this.duracion = duracion;
         this.lenguaje = lenguaje;
-        this.clasificacion = clasificacion;//
-        this.Autocine = autocine;
+        this.clasificacion = clasificacion;
+        this.autocine = autocine;
         autocine.agregarPelicula(this);
     }
 

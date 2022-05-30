@@ -15,7 +15,7 @@ public class Puesto implements Serializable{
 
     //tipo
 
-    public enum Tipo {Preferencial, Estandar}
+    public enum Tipo {PREFERENCIAL, GENERAL}
 
     //atributos
 
@@ -35,12 +35,12 @@ public class Puesto implements Serializable{
         return tipo;
     }
 
-    public void setTipo(Tipo tipo) {
-        if(tipo.equals("Preferencial")) {
-            this.tipo = tipo.Preferencial;
+    public void setTipo(String Tipo) {
+        if(tipo.equals("PREFERENCIAL")) {
+            this.tipo = tipo.PREFERENCIAL;
         }
         else{
-            this.tipo = tipo.Estandar;
+            this.tipo = tipo.GENERAL;
         }
     }
     public int getNumero() {
@@ -51,7 +51,7 @@ public class Puesto implements Serializable{
     }
 
     public float getPrecio() {
-        if (this.tipo == tipo.Preferencial) {
+        if (this.tipo == tipo.PREFERENCIAL) {
             return 25000;
         }
         else{
