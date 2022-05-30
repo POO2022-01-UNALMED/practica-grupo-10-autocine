@@ -6,8 +6,8 @@ import gestorAplicacion.Autocine.*;
 public class Sala2D extends Sala implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
-	public Sala2D(int filas, int columnas, int filaspreferencial, Autocine autocine) {
-		super(filas, columnas, filaspreferencial, 2000, autocine);
+	public Sala2D(int filas, int columnas, int filasPreferencial, Autocine autocine) {
+		super(filas, columnas, filasPreferencial, 2000, autocine);
 	}
 	
 	public Sala2D(int preferencial, Autocine autocine) {
@@ -27,7 +27,7 @@ public class Sala2D extends Sala implements Serializable{
 		
 		int total = filas*columnas; 	//numero de puestos
 
-		int totalpreferencial = filaspreferencial*columnas; //numero de puestos prefe y se le resta 1 cada que se compre uno
+		int totalpreferencial = filasPreferencial*columnas; //numero de puestos prefe y se le resta 1 cada que se compre uno
 													
 		String tipo = "PREFENCIAL";
 		
