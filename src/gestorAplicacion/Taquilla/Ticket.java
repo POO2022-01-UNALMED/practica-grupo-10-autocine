@@ -1,7 +1,6 @@
 package gestorAplicacion.Taquilla;
 import java.io.Serializable;
-import gestorAplicacion.Salas.Puesto;
-import gestorAplicacion.Salas.Tipo;
+import gestorAplicacion.Salas.Puesto.Tipo;
 
 
 public class Ticket implements Serializable{
@@ -57,7 +56,7 @@ public class Ticket implements Serializable{
 		return estado;
 	}
 	public void setEstado(boolean estado) {
-		this.Estado = estado;
+		this.estado = estado;
 	}
 	public Funcion getFuncion() {
 		return funcion;
