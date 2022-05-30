@@ -8,9 +8,9 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import gestorAplicacion.Persona.Dependiente;
-import gestorAplicacion.Persona.Empleado;
-import gestorAplicacion.Persona.Tecnico;
+import gestorAplicacion.Autocine.Autocine;
+import gestorAplicacion.Taquilla.Funcion;
+import gestorAplicacion.Salas.Sala3D;
 import gestorAplicacion.tienda.Bodega;
 import gestorAplicacion.tienda.CajaRegistradora;
 import gestorAplicacion.tienda.Cliente;
@@ -78,9 +78,9 @@ public class Deserializador {
 	 * Funcion para deserializar toda la aplicacion Generic IT
 	 */
 	public static void deserializarTodo() {
-		Deserializador.deserializador(Dependiente.getDependientes(), "Dependientes");
-		Deserializador.deserializador(Tecnico.tecnicos, "Tecnicos");
-		Deserializador.deserializador(CajaRegistradora.cajasRegistradoras, "CajasRegistradoras");
+		Deserializador.deserializador(Autocine.getAutocine(), "Autocine");
+		Deserializador.deserializador(Funcion.getFunciones(), "Funciones");
+		Deserializador.deserializador(Sala3D.getSalas3D(), "Salas 3D");
 		Deserializador.deserializador(Cliente.getClientes(), "Clientes");
 		Deserializador.deserializador(Componente.componentes, "Componentes");
 		Deserializador.deserializador(Producto.productos, "Productos");

@@ -19,6 +19,10 @@ public class Autocine implements Serializable {
 	
 	// Serializacion.
 	private static final long serialVersionUID = 1L;
+	static List<Autocine> autocine;
+	static {
+		autocine = new ArrayList<Autocine>();
+	}
 	
 	// Atributos.
 	private String nombre;
@@ -310,6 +314,12 @@ public class Autocine implements Serializable {
 	}
 	public void setSalas(List<Sala> salas) {
 		this.salas = salas;
+	}
+	public static List<Autocine> getAutocine() {
+		return autocine;
+	}
+	public static void setAutocine(List<Autocine> autocine) {
+		Autocine.autocine = autocine;
 	}
 	
 	

@@ -1,6 +1,7 @@
 package gestorAplicacion.Salas;
 
 import java.io.Serializable;
+import java.util.*;
 import gestorAplicacion.Autocine.*;
 
 /**
@@ -14,6 +15,10 @@ public class Sala3D extends Sala implements Serializable {
 	
 	// Serializacion.
 	private static final long serialVersionUID = 1L;
+	static List<Sala3D> salas3D;
+	static {
+		salas3D = new ArrayList<Sala3D>();
+	}
 	
 	// Atributos.
 	private int cantidadGafas;
@@ -61,6 +66,12 @@ public class Sala3D extends Sala implements Serializable {
 	}
 	public void setCantidadGafas(int cantidadGafas) {
 		this.cantidadGafas = cantidadGafas;
+	}
+	public static List<Sala3D> getSalas3D() {
+		return salas3D;
+	}
+	public static void setSalas3D(List<Sala3D> salas3d) {
+		salas3D = salas3d;
 	}
 	
 	

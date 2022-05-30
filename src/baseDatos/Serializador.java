@@ -6,9 +6,9 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.List;
 
-import gestorAplicacion.Persona.Dependiente;
-import gestorAplicacion.Persona.Empleado;
-import gestorAplicacion.Persona.Tecnico;
+import gestorAplicacion.Autocine.Autocine;
+import gestorAplicacion.Taquilla.Funcion;
+import gestorAplicacion.Salas.Sala3D;
 import gestorAplicacion.tienda.Bodega;
 import gestorAplicacion.tienda.CajaRegistradora;
 import gestorAplicacion.tienda.Cliente;
@@ -57,9 +57,9 @@ public class Serializador {
 	 * Serializamos todas las clases que necesitamos
 	 */
 	public static void serializarTodo() {
-		Serializador.serializar(Dependiente.getDependientes(), "Dependientes");
-		Serializador.serializar(Tecnico.tecnicos, "Tecnicos");
-		Serializador.serializar(CajaRegistradora.cajasRegistradoras, "CajasRegistradoras");
+		Serializador.serializar(Autocine.getAutocine(), "Autocine");
+		Serializador.serializar(Funcion.getFunciones(), "Funciones");
+		Serializador.serializar(Sala3D.getSalas3D(), "Salas 3D");
 		Serializador.serializar(Cliente.getClientes(), "Clientes");
 		Serializador.serializar(Componente.componentes, "Componentes");
 		Serializador.serializar(Producto.productos, "Productos");
