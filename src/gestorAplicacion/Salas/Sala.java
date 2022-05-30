@@ -30,10 +30,10 @@ public abstract class Sala implements Serializable{
 
     //Constructores
 
-    public Sala(int filas, int columnas, int filasvip, int precio, Autocine autocine) {
+    public Sala(int filas, int columnas, int filaspreferencial, int precio, Autocine autocine) {
         this.filas = filas;
         this.columnas = columnas;
-        this.filasPreferencial = filasvip;
+        this.filasPreferencial = filaspreferencial;
         this.precio=precio;
         this.autocine=autocine;
 
@@ -253,5 +253,13 @@ public abstract class Sala implements Serializable{
 
     public void setAutocine(Autocine autocine) {
         this.autocine = autocine;
+    }
+
+    public ArrayList<Puesto> getPuestos() {
+        return puestos;
+    }
+
+    public void setPuestos(ArrayList<Puesto> puestos) {
+        this.puestos  = puestos;
     }
 }

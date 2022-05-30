@@ -114,7 +114,7 @@ public class Funcion implements Serializable {
 		
 		for(int i = 0; i < sala.getPuestos().size(); i++) {
 			if(disponibles > 0) {
-				Ticket ticket = new Ticket(this, puestos.get(i));
+				Ticket ticket = new Ticket(this,puestos.get(i));
 				tickets.add(ticket);
 				disponibles --;
 			}
