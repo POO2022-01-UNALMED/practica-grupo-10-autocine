@@ -1,6 +1,7 @@
 package gestorAplicacion.Taquilla;
 import java.io.Serializable;
 import gestorAplicacion.Salas.Puesto.Tipo;
+import gestorAplicacion.Salas;
 
 
 public class Ticket implements Serializable{
