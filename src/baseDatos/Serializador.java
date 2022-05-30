@@ -12,12 +12,9 @@ import gestorAplicacion.Salas.Sala;
 import gestorAplicacion.Taquilla.Funcion;
 import gestorAplicacion.Salas.Sala3D;
 import gestorAplicacion.Taquilla.Pelicula;
-import gestorAplicacion.tienda.Bodega;
-import gestorAplicacion.tienda.CajaRegistradora;
-import gestorAplicacion.tienda.Cliente;
-import gestorAplicacion.tienda.Componente;
-import gestorAplicacion.tienda.Producto;
-import gestorAplicacion.tienda.Servicio;
+import gestorAplicacion.Taquilla.Ticket;
+import gestorAplicacion.Persona.Cliente;
+import gestorAplicacion.Salas.Sala2D;
 
 /**
  * Se utiliza para serializar todos los objetos creados durante la ejecucion
@@ -65,9 +62,9 @@ public class Serializador {
 		Serializador.serializar(Sala3D.getSalas3D(), "Salas 3D");
 		Serializador.serializar(Sala.getSalas(), "Salas");
 		Serializador.serializar(Pelicula.getPeliculas(), "Peliculas");
-		Serializador.serializar(Puesto.getPuestos(), "Puesto");
-		Serializador.serializar(Servicio.getServicios(), "Servicios");
-		Serializador.serializar(Bodega.getComponentes(), "Bodega");
-		Serializador.serializar(Empleado.getEmpleados(), "Empleados");
+		Serializador.serializar(Puestos.getPuestos(), "Puestos");
+		Serializador.serializar(Cliente.getClientes(), "Clientes");
+		Serializador.serializar(Ticket.getTickets(), "Tickets");
+		Serializador.serializar(Sala2D.getSalas2D(), "Salas 2D");
 	}
 }

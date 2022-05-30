@@ -14,13 +14,9 @@ import gestorAplicacion.Salas.Sala;
 import gestorAplicacion.Taquilla.Funcion;
 import gestorAplicacion.Salas.Sala3D;
 import gestorAplicacion.Taquilla.Pelicula;
-import gestorAplicacion.tienda.Bodega;
-import gestorAplicacion.tienda.CajaRegistradora;
-import gestorAplicacion.tienda.Cliente;
-import gestorAplicacion.tienda.Componente;
-import gestorAplicacion.tienda.Producto;
-import gestorAplicacion.tienda.Servicio;
-
+import gestorAplicacion.Taquilla.Ticket;
+import gestorAplicacion.Persona.Cliente;
+import gestorAplicacion.Salas.Sala2D;
 /**
  * Clase para deserializar los objetos que se crearon en ejecucion
  * @author Erik Gonzalez
@@ -87,8 +83,8 @@ public class Deserializador {
 		Deserializador.deserializador(Sala.getSalas(), "Salas");
 		Deserializador.deserializador(Pelicula.getPeliculas(), "Peliculas");
 		Deserializador.deserializador(Puesto.getPuestos(), "Puesto");
-		Deserializador.deserializador(Servicio.getServicios(), "Servicios");
-		Deserializador.deserializador(Bodega.getComponentes(), "Bodega");
-		Deserializador.deserializador(Empleado.getEmpleados(), "Empleados");
+		Deserializador.deserializador(Cliente.getClientes(), "Clientes");
+		Deserializador.deserializador(Ticket.getTickets(), "Tickets");
+		Deserializador.deserializador(Sala2D.getSalas2D(), "Salas 2D");
 	}
 }

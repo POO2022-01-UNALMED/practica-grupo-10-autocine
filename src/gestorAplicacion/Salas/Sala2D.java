@@ -4,7 +4,12 @@ import java.util.*;
 import gestorAplicacion.Autocine.*;
 
 public class Sala2D extends Sala implements Serializable{
-	private static final long serialVersionUID = 1L;
+	// Serializacion.
+		private static final long serialVersionUID = 1L;
+		static List<Sala2D> salas2D;
+		static {
+			salas2D= new ArrayList<Sala2D>();
+		}
 	
 	public Sala2D(int filas, int columnas, int filasPreferencial, Autocine autocine) {
 		super(filas, columnas, filasPreferencial, 2000, autocine);
@@ -44,6 +49,14 @@ public class Sala2D extends Sala implements Serializable{
 											
 		   puestos.add(puesto);					
 		}
+	}
+	
+	//get y set
+	public static List<Sala2D> getSalas2D() {
+		return salas2D;
+	}
+	public static void setSalas2D(List<Sala2D> salas2d) {
+		salas2D = salas2d;
 	}
 
 }

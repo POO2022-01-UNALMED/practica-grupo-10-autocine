@@ -10,9 +10,9 @@ public class Ticket implements Serializable{
 	
 	// Serializacion.
 	private static final long serialVersionUID = 1L;
-	static List<Ticket> ticket;
+	static List<Ticket> tickets;
 	static {
-		aticket = new ArrayList<Ticket>();
+		tickets = new ArrayList<Ticket>();
 	}
 	
 	//Atributos 
@@ -121,6 +121,13 @@ public class Ticket implements Serializable{
 
 	public void setTipo_puesto(Tipo tipo_puesto) {
 		this.tipo_puesto = tipo_puesto;
+	}
+	
+	public static List<Ticket> getTicket() {
+		return tickets;
+	}
+	public static void setTicket(List<Ticket> tickets) {
+		tickets = tickets;
 	}
 	
 }

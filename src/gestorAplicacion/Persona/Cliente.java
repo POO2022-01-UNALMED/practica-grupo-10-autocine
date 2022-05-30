@@ -16,9 +16,15 @@ public class Cliente implements Serializable {
     private int edad;
     private int id;
     private double dinero;
-    private static final long serialVersionUID = 1L;
     private List<Ticket> historialCompras= new ArrayList<Ticket>(); //una lista con los boletos que ha comprado el cliente en su vida
     private Autocine autocine;
+    
+ // Serializacion.
+ 	private static final long serialVersionUID = 1L;
+ 	static List<Cliente> clientes;
+ 	static {
+ 		clientes = new ArrayList<Cliente>();
+ 	}
     
  
     public double getDinero() {
@@ -115,6 +121,13 @@ public class Cliente implements Serializable {
 		this.autocine = autocine;
 	}
 	
+	public static List<Cliente> getClientes() {
+		return clientes;
+	}
+
+	public static void setClientes(List<Cliente> clientes) {
+		Cliente.clientes = clientes;
+	}
  
     
     @Override
