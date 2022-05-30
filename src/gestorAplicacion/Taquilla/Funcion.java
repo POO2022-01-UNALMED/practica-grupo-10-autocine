@@ -201,8 +201,8 @@ public class Funcion implements Serializable {
 	public void setMes(int mes) {
 		this.mes = mes;
 	}
-	public Horario getHorario() {
-		return horario;
+	public String getHorario() {
+		return horario.getHora();
 	}
 	public void setHorario(Horario horario) {
 		this.horario = horario;
