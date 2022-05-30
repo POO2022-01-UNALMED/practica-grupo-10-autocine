@@ -90,45 +90,7 @@ public class Autocine implements Serializable {
 		return funciones;
 	}
 	
-	
-	/**
-	 * @param pelicula
-	 * @param horario
-	 * @summary Recibe una pelicula y un horario.
-	 * @return Una lista con funciones disponibles de acuerdo al horario y pelicula seleccionada.
-	 */
-	public ArrayList<Funcion> verFuncion(Pelicula pelicula, String horario) {				
-		ArrayList<Funcion> funciones = new ArrayList<Funcion>();
 		
-		for(Funcion funcion: cartelera) {
-			if(funcion.getPelicula() == pelicula && funcion.getHorario() == horario) {	
-				funciones.add(funcion);
-			}
-		}
-		return funciones;
-	}
-	
-	
-	/**
-	 * @param pelicula
-	 * @param horario
-	 * @param dia
-	 * @param mes
-	 * @summary Recibe una pelicula y un horario.
-	 * @return Una lista de funciones disponibles segun el horario y pelicula seleccionada.
-	 */
-	public ArrayList<Funcion> verFuncion(Pelicula pelicula, String horario, int dia, int mes) {		
-		ArrayList<Funcion> funciones = new ArrayList<Funcion>();
-		
-		for(Funcion funcion: cartelera) {
-			if(funcion.getPelicula() == pelicula && funcion.getHorario() == horario && funcion.getDia() == dia && funcion.getMes() == mes) {
-				funciones.add(funcion);
-			}
-		}
-		return funciones;
-	}
-
-	
 	/**
 	 * @param dia
 	 * @param mes

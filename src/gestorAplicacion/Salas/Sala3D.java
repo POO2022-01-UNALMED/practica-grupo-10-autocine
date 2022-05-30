@@ -19,7 +19,7 @@ public class Sala3D extends Sala implements Serializable {
 	private int cantidadGafas;
 	
 	// Contructores.
-	public Sala3D(int filas, int columnas, int cantidadGafas, Autocine autocine) {
+	public Sala3D(int filas, int columnas, int cantidadgafas, Autocine autocine) {
 		super(filas, columnas, 0, 5000, autocine);
 		this.cantidadGafas = cantidadgafas;
 	}

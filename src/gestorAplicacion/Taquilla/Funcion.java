@@ -35,7 +35,7 @@ public class Funcion implements Serializable {
 		public static Horario getHorario(String hora) {
 			Horario[] horarios = {UNO, DOS, TRES, CUATRO, CINCO, SEIS};
 			for(Horario horario: horarios) {
-				if(hora.equals(horario.getHorario())) {
+				if(hora.equals(horario.getHora())) {
 					return horario;
 				}
 			}
@@ -71,9 +71,9 @@ public class Funcion implements Serializable {
 		this.pelicula = pelicula;
 		this.numero = cantidadFunciones;
 		this.setSala(sala);
-		this.setCine(cine);
+		this.setAutocine(autocine);
 		this.crearTicket();
-		Autocine.agregarFuncion(this);
+		autocine.agregarFuncion(this);
 		sala.agregarFuncion(this);
 		cantidadFunciones ++;
 	}
@@ -90,10 +90,10 @@ public class Funcion implements Serializable {
 	 * @return Una funcion para una pelicula.
 	 */
 	public static Funcion crearFuncion(int dia, int mes, Horario horario, Pelicula pelicula, int num_sala, Autocine autocine) {
-		Sala sala = Autocine.buscarSala(num_sala);
+		Sala sala = autocine.buscarSala(num_sala);
 		if(sala != null) {
 			if(sala.verificarDisponibilidad(dia, mes, horario.getHora())) {
-				return new Funcion(dia, mes, horario, pelicula, sala, cine);
+				return new Funcion(dia, mes, horario, pelicula, sala, autocine);
 			}
 			else {
 				return null;
