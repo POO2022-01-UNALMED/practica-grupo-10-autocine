@@ -136,7 +136,7 @@ public class Funcion implements Serializable {
 			for(int j = 0; j < sala.getColumnas(); j++) {
 				Ticket ticket = tickets.get((i)*sala.getColumnas()+j);
 				if(ticket != null) {
-					String formato_ticket = ticket.disponibildad() + ticket.tipoString() + String.valueOf(ticket.getNum_puesto());
+					String formato_ticket = ticket.estado() + ticket.tipoString() + String.valueOf(ticket.getNum_puesto());
 					fila.add(formato_ticket);
 				}
 				else {
@@ -175,15 +175,12 @@ public class Funcion implements Serializable {
 	 * @return Un Boolen de si se pudo o no vender un ticket. Retorna True o False segun sea el caso.
 	 */
 	public Boolean ventaTicket(Ticket ticket, Cliente cliente) {
-		if(ticket.isDisponibilidad() == true && cliente.getEdad() >= this.getPelicula().getClasificacion()) {
-			ticket.setDisponibilidad(false);
+		if(ticket.isEstado() == true && cliente.getEdad() >= this.getPelicula().getClasificacion()) {
+			ticket.setEstado(false);
 			cliente.getHistorialCompras().add(ticket);
 			cantidadTicketsVendidos ++;
 			ticket.calcularPrecioDefinitivo(cliente);
-			float ganacia = autocine.getDineroGanado() + ticket.getPrecioTotal();
-			autocine.setDineroGanado(ganancia);
-			pelicula.anadirCantidadTickets();
-			return True;
+			return true;
 		}
 		else {
 			return false;
