@@ -1,7 +1,6 @@
 package gestorAplicacion.Taquilla;
 import java.io.Serializable;
-import gestorAplicacion.salas.Puesto;
-import gestorAplicacion.salas.Tipo;
+import gestorAplicacion.Salas.Puesto.Tipo;
 
 
 public class Ticket implements Serializable{
@@ -13,7 +12,7 @@ public class Ticket implements Serializable{
 	private Tipo tipo_puesto; 
 	private float precio_puesto;
 	private boolean estado;
-	private Pelicula pelicula;
+	private Funcion funcion;
 	
 	
 	public void Boleto(Pelicula pelicula, Puesto puesto) {
@@ -40,7 +39,8 @@ public class Ticket implements Serializable{
 		if(tipo_puesto==Tipo.PREFERENCIAL) {	//El tipo de la puesto es Preferencial retornara P, si no General
 			return "P";
 		}
-		return "G";		
+		return "G";
+	}
 
 	
 	// get y set
@@ -53,23 +53,23 @@ public class Ticket implements Serializable{
 
 	
 	public boolean isEstado() {
-		return Estado;
+		return estado;
 	}
 	public void setEstado(boolean estado) {
-		this.Estado = estado;
+		this.estado = estado;
 	}
-	public Pelicula getPelicula() {
-		return Pelicula;
+	public Funcion getFuncion() {
+		return funcion;
 	}
-	public void setPelicula(Pelicula pelicula) {
-		this.pelicula = pelicula;
+	public void setFuncion(Funcion funcion) {
+		this.funcion = funcion;
 	}
 
 	public int getNum_puesto() {
 		return num_puesto;
 	}
 
-	private void set_puesto(puesto puesto) {	
+	private void set_puesto(Puesto puesto) {	
 		/*Recibe el puesto con el que se asignan los atributos de num,tipo
 		  y precio y no devuelve nada	
 		 */
