@@ -84,7 +84,7 @@ public class Deserializador {
 		Deserializador.deserializador(Pelicula.getPeliculas(), "Peliculas");
 		Deserializador.deserializador(Puesto.getPuestos(), "Puesto");
 		Deserializador.deserializador(Cliente.getClientes(), "Clientes");
-		Deserializador.deserializador(Ticket.getTickets(), "Tickets");
+		Deserializador.deserializador(Ticket.getTicket(), "Tickets");
 		Deserializador.deserializador(Sala2D.getSalas2D(), "Salas 2D");
 	}
 }
