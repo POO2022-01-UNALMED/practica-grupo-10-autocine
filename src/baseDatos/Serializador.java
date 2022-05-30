@@ -62,9 +62,9 @@ public class Serializador {
 		Serializador.serializar(Sala3D.getSalas3D(), "Salas 3D");
 		Serializador.serializar(Sala.getSalas(), "Salas");
 		Serializador.serializar(Pelicula.getPeliculas(), "Peliculas");
-		Serializador.serializar(Puestos.getPuestos(), "Puestos");
+		Serializador.serializar(Puesto.getPuestos(), "Puestos");
 		Serializador.serializar(Cliente.getClientes(), "Clientes");
-		Serializador.serializar(Ticket.getTickets(), "Tickets");
+		Serializador.serializar(Ticket.getTicket(), "Tickets");
 		Serializador.serializar(Sala2D.getSalas2D(), "Salas 2D");
 	}
 }
