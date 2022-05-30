@@ -7,7 +7,13 @@ import gestorAplicacion.Persona.Cliente;
 
 
 public class Ticket implements Serializable{
+	
+	// Serializacion.
 	private static final long serialVersionUID = 1L;
+	static List<Ticket> ticket;
+	static {
+		aticket = new ArrayList<Ticket>();
+	}
 	
 	//Atributos 
 	
