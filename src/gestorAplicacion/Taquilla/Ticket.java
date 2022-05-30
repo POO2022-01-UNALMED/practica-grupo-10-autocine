@@ -1,5 +1,6 @@
 package gestorAplicacion.Taquilla;
 import java.io.Serializable;
+import java.util.*;
 
 import gestorAplicacion.Salas.Puesto;
 import gestorAplicacion.Salas.Puesto.Tipo;
