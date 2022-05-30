@@ -17,9 +17,8 @@ public class Cliente implements Serializable {
     private int id;
     private double dinero;
     private static final long serialVersionUID = 1L;
-	private String ocupacion;
-	private List<Ticket> historialCompras= new ArrayList<Ticket>(); //una lista con los boletos que ha comprado el cliente en su vida
-	private Autocine autocine;
+    private List<Ticket> historialCompras= new ArrayList<Ticket>(); //una lista con los boletos que ha comprado el cliente en su vida
+    private Autocine autocine;
     
  
     public double getDinero() {
