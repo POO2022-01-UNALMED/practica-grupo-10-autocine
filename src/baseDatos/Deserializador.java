@@ -88,4 +88,9 @@ public class Deserializador {
 		Deserializador.deserializador(Sala2D.getSalas2D(), "Salas 2D");
 		
 	}
+
+	public static Autocine deserializador() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

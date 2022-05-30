@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 
 
 public class Funciones {
+	
 	public static void clienteNuevoOViejo(Autocine autocine) {
 		int id;
 		int opcion;
