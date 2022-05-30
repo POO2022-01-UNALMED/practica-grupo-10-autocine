@@ -84,7 +84,7 @@ public class Autocine implements Serializable {
 		ArrayList<Funcion> funciones = new ArrayList<Funcion>();
 		
 		for(Funcion funcion: cartelera) {
-			if(funcion.getPelicula().getGenero() == cliente.mostWatchedGenre()) {	
+			if(funcion.getPelicula().getGenero() == cliente.GeneroMasVisto()) {	
 			}
 		}
 		return funciones;
@@ -208,7 +208,7 @@ public class Autocine implements Serializable {
 		ArrayList<Integer> lista = new ArrayList<Integer>();  
 		
 		for(Cliente cliente: clientes) {
-			lista.add(cliente.getCedula());
+			lista.add(cliente.getId());
 		}
 		
 		if (lista.contains(num)) {	
@@ -230,9 +230,9 @@ public class Autocine implements Serializable {
 		ArrayList<Integer> lista = new ArrayList<Integer>();
 		
 		for(Cliente cliente: clientes) {
-			lista.add(cliente.getCedula());
+			lista.add(cliente.getId());
 		
-			if (cliente.getCedula() == num) {
+			if (cliente.getId() == num) {
 				return cliente;
 			}
 		}
