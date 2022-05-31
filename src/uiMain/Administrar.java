@@ -64,7 +64,7 @@ public class Administrar {
 		
 		ArrayList<String> generos = new ArrayList<>(Arrays.asList("Animada", "Accion", "Clasica", "Terror", "Fantasia", "Drama"));
 		for(int i = 0; i < 6; i++){
-			System.out.println(String.valueOf(i + 1) + " " + generos.get(i));
+			System.out.println(String.valueOf(i + 1) + ". " + generos.get(i));
 		}
 
 		
@@ -135,9 +135,11 @@ public class Administrar {
 		
 		ArrayList<Sala> estados = Autocine.salasDisponibles(mes,dia);
 		
+		int i = 1;
 		System.out.println("Salas disponibles para el dia/mes: " + dia + "/" + mes);
 		for(Sala d: estados) {
-			System.out.println("Sala " + d.getNumero());				
+			System.out.println(i + ". " + "Sala " + d.getNumero());	
+			i++;
 		}
 		
 		System.out.println("Seleccione el numero de la sala que quiere: ");
@@ -157,11 +159,11 @@ public class Administrar {
 		
 		System.out.println("Peliculas en el cine:");
 		
-		int i = 1;
+		int j = 1;
 		
 		for(Pelicula p: Autocine.getPeliculas()) {
-			System.out.println(i + " : " + p.getNombre());
-			i++;
+			System.out.println(j + " : " + p.getNombre());
+			j++;
 		}
 		
 		System.out.println("Digite el numero de la pelicula seleccionada: ");
