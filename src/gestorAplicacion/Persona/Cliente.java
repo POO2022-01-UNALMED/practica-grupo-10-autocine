@@ -12,9 +12,10 @@ import gestorAplicacion.Autocine.*;
 public class Cliente implements Serializable {
  
     /*Atributos*/
+    private int id;
     private String nombre;
     private int edad;
-    private int id;
+    
     private double dinero;
     private List<Ticket> historialCompras= new ArrayList<Ticket>(); //una lista con los boletos que ha comprado el cliente en su vida
     private Autocine autocine;
@@ -36,12 +37,13 @@ public class Cliente implements Serializable {
 	}
 
 	/*Constructores*/
-    public Cliente(String nombre, int edad, int id, Autocine autocine) {
-        this.nombre = nombre;
-        this.edad = edad;
-        this.id = id;
-        this.autocine=autocine;
-    }
+    public Cliente(int id, String nombre, int edad, Autocine autocine) {
+		this.id = id;
+		this.nombre = nombre;
+		this.edad = edad;
+		autocine.agregarCliente(this);
+		this.autocine=autocine;
+	}
     
     public String GeneroMasVisto() {
 		/*
@@ -131,8 +133,10 @@ public class Cliente implements Serializable {
  
     
     @Override
-    public String toString() {
-        return "el nombre del cliente es " + this.nombre + " de " + this.edad + " años y con identificación " + id +" y con "+ dinero + " pesos.";
-    }
+	public String toString() {
+		
+		return "Cliente: " + nombre + "-" + String.valueOf(edad);
+		
+	}
  
 }
