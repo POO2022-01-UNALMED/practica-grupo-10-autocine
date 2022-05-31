@@ -160,7 +160,7 @@ public class Autocine implements Serializable {
 	public static void agregarSala(Sala nuevo) {
 		salas.add(nuevo);
 	}
-	public void agregarFuncion(Funcion nuevo) {
+	public static void agregarFuncion(Funcion nuevo) {
 		cartelera.add(nuevo);
 	}
 

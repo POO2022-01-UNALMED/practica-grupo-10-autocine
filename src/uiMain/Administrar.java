@@ -158,16 +158,17 @@ public class Administrar {
 		System.out.println(Seleccionada.verHorarios(dia, mes));
 		
 		System.out.print("Ingrese el horario en el formato que se le presento arriba: ");
-		String hora = readString();
+		Scanner entr = new Scanner(System.in);
+		String hora = entr.nextLine();
 		
-		Horario h = Horario.getHorario(hora);
+		Horario horario = Horario.getHorario(hora);
 		
 		System.out.println("Peliculas en el cine");
 		
 		int i = 1;
 		
 		for(Pelicula p: Autocine.getPeliculas()) {
-			System.out.println(i + ": " + p.getNombre());	
+			System.out.println(i + " : " + p.getNombre());
 			i++;
 		}
 		
@@ -176,14 +177,33 @@ public class Administrar {
 		
 		Pelicula pelicula = Autocine.getPeliculas().get(peli - 1);
 			
-		Funcion.crearFuncion(dia, mes, h, pelicula, Seleccionada.getNumero(), autocine);
+		Funcion.crearFuncion(dia, mes, horario, pelicula, Seleccionada.getNumero(), autocine);
 		System.out.println("La funcion fue generada con exito");
 	}
 	
 
 	public static void eliminarFuncion(Autocine autocine) {
-		
-		
+		System.out.println("funciones disponibles: ");
+
+		List<List<Funcion>> cartelera= new ArrayList<>();
+		for(Funcion f: Funcion.getFunciones()) {
+			System.out.println(f.getFunciones());
+			cartelera.add(f.getFunciones());
+		}
+
+		System.out.println("Digite el numero de la funcion que quiere eliminar:");
+		Scanner entr = new Scanner(System.in);
+		String eliminar = entr.nextLine();
+
+		if(cartelera.contains(eliminar)) {
+			int pos = cartelera.indexOf(eliminar);
+			Funcion.getFunciones().remove(pos);
+			System.out.println("La funcion fue eliminada con exito");
+		}
+		else {
+			System.out.println("Digite un nombre valido");
+			eliminarFuncion(autocine);
+		}
 	}
 		
 		
@@ -253,5 +273,5 @@ public class Administrar {
 	}
 
 
-	
+
 }

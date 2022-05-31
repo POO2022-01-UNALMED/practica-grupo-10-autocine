@@ -77,7 +77,7 @@ public class Funcion implements Serializable {
 		this.setSala(sala);
 		this.setAutocine(autocine);
 		this.crearTicket();
-		autocine.agregarFuncion(this);
+		Autocine.agregarFuncion(this);
 		sala.agregarFuncion(this);
 		cantidadFunciones ++;
 	}
