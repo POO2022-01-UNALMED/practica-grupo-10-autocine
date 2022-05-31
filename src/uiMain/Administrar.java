@@ -26,14 +26,12 @@ public class Administrar {
 	public static void Ejecucion(Autocine autocine) {
 	
 		int opcion;
-			System.out.println("Â¿Que quiere hacer?\n"
-					+ "1: Agregar una pelicula\n"
-					+ "2: Eliminar una pelicula\n"
-					+ "3: Agregar una funcion\n"
-					+ "4: Eliminar una funcion\n"
-					+ "5: Agregar una sala\n"
-					+ "6: Eliminar una sala\n"
-					+ "7: Atras");
+			System.out.println("¿Que quiere hacer?\n"
+					+ " 1. Agregar una pelicula.\n"
+					+ " 2. Eliminar una pelicula.\n"
+					+ " 3. Agregar una funcion.\n"
+					+ " 4. Agregar una sala.\n"
+					+ " 5. Atras.");
 			
 			opcion=readInt();
 			
@@ -47,16 +45,10 @@ public class Administrar {
 			case 3: generarFuncion(autocine);
 			break;
 			
-			case 4: eliminarFuncion(autocine);
+			case 4: agregarSala(autocine);
 			break;
 			
-			case 5: agregarSala(autocine);
-			break;
-			
-			case 6: eliminarSala(autocine);
-			break;
-			
-			case 7: break;
+			case 5: break;
 		}			
 	}
 
@@ -64,11 +56,11 @@ public class Administrar {
 	
 	public static void agregarPelicula(Autocine autocine) {
 
-		System.out.println("Ingrese el nombre de la pelicula:");		
+		System.out.println("Ingrese el nombre de la pelicula: ");		
 		Scanner entr = new Scanner(System.in);
 		String nombre = entr.nextLine();
 		
-		System.out.println("Ingrese numero del genero que desea: ");
+		System.out.println("Ingrese el numero del genero que desea: ");
 		
 		ArrayList<String> generos = new ArrayList<>(Arrays.asList("Animada", "Accion", "Clasica", "Terror", "Fantasia", "Drama"));
 		for(int i = 0; i < 6; i++){
@@ -87,11 +79,11 @@ public class Administrar {
 				break;
 			}
 			else {
-				System.out.println("Ingrese una duracion valida");
+				System.out.println("Ingrese una duracion valida.");
 			}
 		}
 		
-		System.out.println("Ingrese el idioma de la pelicula:");
+		System.out.println("Ingrese el idioma de la pelicula: ");
 		
 		Scanner entra = new Scanner(System.in);
 		String idioma = entra.nextLine();
@@ -101,9 +93,9 @@ public class Administrar {
 		
 		Pelicula pelicula = new Pelicula(nombre, genero, duracion, idioma, edad, autocine);
 		
-		autocine.agregarPelicula(pelicula);
+		Autocine.agregarPelicula(pelicula);
 		
-		System.out.println("La pelicula fue creada con exito");
+		System.out.println("¡La pelicula fue creada con exito!");
 	}
 	
 	
@@ -117,16 +109,16 @@ public class Administrar {
 			titulos.add(p.getNombre());
 		}
 		
-		System.out.println("Digite el nombre de la pelicula que quiere eliminar:");
+		System.out.println("Digite el nombre de la pelicula que quiere eliminar: ");
 		String eliminar=readString();
 		
 		if(titulos.contains(eliminar)) {			
 			int pos = titulos.indexOf(eliminar);	
 			Autocine.getPeliculas().remove(pos);		
-			System.out.println("La pelicula fue eliminada con exito");
+			System.out.println("¡La pelicula fue eliminada con exito!");
 		}
 		else {
-			System.out.println("Digite un nombre valido");	
+			System.out.println("Digite un nombre valido.");	
 			eliminarPelicula(autocine);
 		}
 	}
@@ -163,7 +155,7 @@ public class Administrar {
 		
 		Horario horario = Horario.getHorario(hora);
 		
-		System.out.println("Peliculas en el cine");
+		System.out.println("Peliculas en el cine:");
 		
 		int i = 1;
 		
@@ -178,38 +170,15 @@ public class Administrar {
 		Pelicula pelicula = Autocine.getPeliculas().get(peli - 1);
 			
 		Funcion.crearFuncion(dia, mes, horario, pelicula, Seleccionada.getNumero(), autocine);
-		System.out.println("La funcion fue generada con exito");
+		System.out.println("¡La funcion fue generada con exito!");
 	}
 	
 
-	public static void eliminarFuncion(Autocine autocine) {
-		System.out.println("funciones disponibles: ");
-
-		List<List<Funcion>> cartelera= new ArrayList<>();
-		for(Funcion f: Funcion.getFunciones()) {
-			System.out.println(f.getFunciones());
-			cartelera.add(f.getFunciones());
-		}
-
-		System.out.println("Digite el numero de la funcion que quiere eliminar:");
-		Scanner entr = new Scanner(System.in);
-		String eliminar = entr.nextLine();
-
-		if(cartelera.contains(eliminar)) {
-			int pos = cartelera.indexOf(eliminar);
-			Funcion.getFunciones().remove(pos);
-			System.out.println("La funcion fue eliminada con exito");
-		}
-		else {
-			System.out.println("Digite un nombre valido");
-			eliminarFuncion(autocine);
-		}
-	}
-		
-		
 	public static void agregarSala(Autocine autocine) {
 		
-		System.out.println("¿Que tipo de sala quiere agregar?: \n" + "1. Sala 3D\n" + "2. Sala 2D\n");
+		System.out.println("¿Que tipo de sala quiere agregar?: \n" 
+				+ " 1. Sala 3D.\n" 
+				+ " 2. Sala 2D.\n");
 		
 		int opcion = Administrar.readInt();
 		
@@ -267,11 +236,5 @@ public class Administrar {
 	}
 	
 	
-	public static void eliminarSala(Autocine autocine) {
-		
-		
-	}
-
-
-
+	
 }
