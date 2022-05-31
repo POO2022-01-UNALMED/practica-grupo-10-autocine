@@ -151,11 +151,11 @@ public class Administrar {
 		System.out.println("Seleccione el numero de la sala que quiere: ");
 		int sala = readInt();
 		
-		Sala seleccionada = Autocine.buscarSala(sala);		
+		Sala Seleccionada = Autocine.buscarSala(sala);
 		
 		System.out.println("Horarios disponibles de la sala: ");
 		
-		System.out.println(seleccionada.verHorarios(dia, mes));		
+		System.out.println(Seleccionada.verHorarios(dia, mes));
 		
 		System.out.print("Ingrese el horario en el formato que se le presento arriba: ");
 		String hora = readString();
@@ -176,7 +176,7 @@ public class Administrar {
 		
 		Pelicula pelicula = Autocine.getPeliculas().get(peli - 1);
 			
-		Funcion.crearFuncion(dia, mes, h, pelicula, seleccionada.getNumero(), autocine); 
+		Funcion.crearFuncion(dia, mes, h, pelicula, Seleccionada.getNumero(), autocine);
 		System.out.println("La funcion fue generada con exito");
 	}
 	

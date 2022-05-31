@@ -154,7 +154,7 @@ public class Autocine implements Serializable {
 	public void agregarCliente(Cliente nuevo) {
 		clientes.add(nuevo);
 	}
-	public void agregarPelicula(Pelicula nuevo) {
+	public static void agregarPelicula(Pelicula nuevo) {
 		peliculas.add(nuevo);
 	}
 	public static void agregarSala(Sala nuevo) {

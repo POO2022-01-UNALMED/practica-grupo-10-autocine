@@ -39,7 +39,7 @@ public class Pelicula implements Serializable {
         this.lenguaje = lenguaje;
         this.clasificacion = clasificacion;
         this.autocine = autocine;
-        autocine.agregarPelicula(this);
+        Autocine.agregarPelicula(this);
     }
 
     // gets y sets
