@@ -20,32 +20,32 @@ public class Ticket implements Serializable{
 	
 	private int num_puesto;
 	private Tipo tipo_puesto; 
-	private float precioTotal;
-	private boolean estado;
-	private Funcion funcion;
-	private float precio_puesto;
+	private static float precioTotal;
+	private static boolean estado;
+	private static Funcion funcion;
+	private static float precio_puesto;
 	
 	
 	public Ticket(Funcion funcion, Puesto puesto) {
-		this.funcion = funcion;
+		Ticket.funcion = funcion;
 		this.set_puesto(puesto);
-		this.estado = true;
-		this.precioTotal = this.calcularPrecio();
+		Ticket.estado = true;
+		Ticket.precioTotal = Ticket.calcularPrecio();
 	}
 	
-	public float calcularPrecio() {		
+	public static float calcularPrecio() {		
 		/*No recibe nada y devuelve un float el cual corresponde al calculo del precio del boleto 
 		que depende del precio de la sala y el precio del puesto */
 		
-			float precio_t=funcion.getSala().getPrecio()+precio_puesto;	 	// Se suma el precio de la sala y el precio de la silla
+			float precio_t = Funcion.getSala().getPrecio() + precio_puesto;	 	// Se suma el precio de la sala y el precio de la silla
 			
 			return precio_t;
 		}
 	
-	public void calcularPrecioDefinitivo(Cliente cliente) {
+	public static void calcularPrecioDefinitivo(Cliente cliente) {
 		
 		float total= calcularPrecio(); 
-		this.setPrecioTotal(total);				
+		setPrecioTotal(total);				
 	}
 	
 	public String estado() {
@@ -81,21 +81,21 @@ public class Ticket implements Serializable{
 		return precioTotal;
 	}
 
-	public void setPrecioTotal(float precioTotal) {
-		this.precioTotal = precioTotal;
+	public static void setPrecioTotal(float precioTotal) {
+		Ticket.precioTotal = precioTotal;
 		
 	}
-	public boolean isEstado() {
+	public static boolean isEstado() {
 		return estado;
 	}
-	public void setEstado(boolean estado) {
-		this.estado = estado;
+	public static void setEstado(boolean estado) {
+		Ticket.estado = estado;
 	}
-	public Funcion getFuncion() {
+	public static Funcion getFuncion() {
 		return funcion;
 	}
 	public void setFuncion(Funcion funcion) {
-		this.funcion = funcion;
+		Ticket.funcion = funcion;
 	}
 
 	public int getNum_puesto() {
@@ -113,7 +113,7 @@ public class Ticket implements Serializable{
 		}
 
 	public void setPrecio_puesto(float precio) {
-		this.precio_puesto=precio;
+		Ticket.precio_puesto=precio;
 	}
 
 	public Tipo getTipo_puesto() {
@@ -127,8 +127,8 @@ public class Ticket implements Serializable{
 	public static List<Ticket> getTicket() {
 		return tickets;
 	}
-	public static void setTicket(List<Ticket> tickets) {
-		tickets = tickets;
+	public void setTicket(List<Ticket> tickets) {
+		Ticket.tickets = tickets;
 	}
 	
 }

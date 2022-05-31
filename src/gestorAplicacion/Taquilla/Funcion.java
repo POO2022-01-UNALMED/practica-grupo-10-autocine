@@ -179,11 +179,11 @@ public class Funcion implements Serializable {
 	 * @return Un Boolen de si se pudo o no vender un ticket. Retorna True o False segun sea el caso.
 	 */
 	public Boolean ventaTicket(Ticket ticket, Cliente cliente) {
-		if(ticket.isEstado() == true && cliente.getEdad() >= Funcion.getPelicula().getClasificacion()) {
-			ticket.setEstado(false);
-			cliente.getHistorialCompras().add(ticket);
+		if(Ticket.isEstado() == true && Cliente.getEdad() >= Funcion.getPelicula().getClasificacion()) {
+			Ticket.setEstado(false);
+			Cliente.getHistorialCompras().add(ticket);
 			cantidadTicketsVendidos ++;
-			ticket.calcularPrecioDefinitivo(cliente);
+			Ticket.calcularPrecioDefinitivo(cliente);
 			return true;
 		}
 		else {

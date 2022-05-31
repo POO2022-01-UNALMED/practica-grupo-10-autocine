@@ -211,13 +211,13 @@ public class Autocine implements Serializable {
 	 * @summary Recibe un numero de funcion.
 	 * @return Retorna un objeto funcion.
 	 */
-	public Funcion BuscadorFuncion(int numero) {
+	public static Funcion BuscadorFuncion(int numero) {
 		ArrayList<Integer> lista = new ArrayList<Integer>();
 		
 		for(Funcion funcion: cartelera) {
-			lista.add(funcion.getNumero());
+			lista.add(Funcion.getNumero());
 			
-			if(funcion.getNumero() == numero) {	
+			if(Funcion.getNumero() == numero) {	
 				return funcion;
 			}
 		}
@@ -231,7 +231,7 @@ public class Autocine implements Serializable {
 	 * @summary Recibe un numero de puesto y una funcion.
 	 * @return Un objeto de clase Ticket, cuyo numero de puesto sea igual al ingresado.
 	 */
-	public Ticket BuscadorTicket(int num_puesto, Funcion funcion) {
+	public static Ticket BuscadorTicket(int num_puesto, Funcion funcion) {
 		ArrayList<Integer> lista= new ArrayList<Integer>();
 
 		for(Ticket ticket: funcion.getTickets()) {

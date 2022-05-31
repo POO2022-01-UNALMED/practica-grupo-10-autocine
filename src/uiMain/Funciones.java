@@ -219,12 +219,12 @@ public class Funciones {
 		
 		System.out.print("Ingrese el codigo de la funcion a la que desea asistir: ");
 		numeroFuncion = entrada.nextInt();
-		Funcion funcion = autocine.BuscadorFuncion(numeroFuncion);
+		Funcion funcion = Autocine.BuscadorFuncion(numeroFuncion);
 		System.out.println(funcion.verDisponiblidad());
 		
 		System.out.print("Ingrese el codigo del ticket que desea comprar: ");
 		numeroTicket = entrada.nextInt();
-		Ticket ticket = autocine.BuscadorTicket(numeroTicket, funcion);
+		Ticket ticket = Autocine.BuscadorTicket(numeroTicket, funcion);
 		
 		if(funcion.ventaTicket(ticket, Autocine.BuscadorCliente(id))) {
 			System.out.print("El precio de su ticket es: ");
@@ -257,7 +257,7 @@ public class Funciones {
 	
 	
 	public static String centerString(int width, String s) {
-		return String.format("%-" + width + "s", String.format("%" + (s.length() + (width - s.length()) / 2) + "s"));
+		return String.format("%-" + width + "s", String.format("%" + (s.length() + (width - s.length()) / 2) + "s", s));
 	}
 	
 	

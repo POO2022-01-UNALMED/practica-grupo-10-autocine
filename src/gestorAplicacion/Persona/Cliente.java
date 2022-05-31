@@ -21,8 +21,8 @@ public class Cliente implements Serializable {
     /*Atributos*/
     private int id;
     private String nombre;
-    private int edad;
-    private List<Ticket> historialCompras= new ArrayList<Ticket>(); //una lista con los boletos que ha comprado el cliente en su vida
+    private static int edad;
+    private static List<Ticket> historialCompras= new ArrayList<Ticket>(); //una lista con los boletos que ha comprado el cliente en su vida
     private Autocine autocine;
     
  
@@ -30,7 +30,7 @@ public class Cliente implements Serializable {
     public Cliente(int id, String nombre, int edad, Autocine autocine) {
 		this.id = id;
 		this.nombre = nombre;
-		this.edad = edad;
+		Cliente.edad = edad;
 		this.autocine=autocine;
 	}
     
@@ -40,7 +40,8 @@ public class Cliente implements Serializable {
 		 */
 		List<String> genreList=new ArrayList<String>();		//lista con los generos que ha visto el cliente
 		for(Ticket ticket: historialCompras) {
-			genreList.add(ticket.getFuncion().getPelicula().getGenero()); 	//Recorre el historial de compras del cliente y anexa de los boletos sus generos
+			Ticket.getFuncion();
+			genreList.add(Funcion.getPelicula().getGenero()); 	//Recorre el historial de compras del cliente y anexa de los boletos sus generos
 		}
 		List<Integer> veces=new ArrayList<Integer>();		//lista para guardar la frecuencia de cada genero
 		for(String genre: genreList) {
@@ -62,12 +63,12 @@ public class Cliente implements Serializable {
         this.nombre = nombre;
     }
  
-    public int getEdad() {
+    public static int getEdad() {
         return edad;
     }
  
     public void setEdad(int edad) {
-        this.edad = edad;
+        Cliente.edad = edad;
     }
  
     public int getId() {
@@ -79,11 +80,11 @@ public class Cliente implements Serializable {
     }
  
     
-    public List<Ticket> getHistorialCompras() {
+    public static List<Ticket> getHistorialCompras() {
 		return historialCompras;
 	}
 	public void setHistorialCompras(List<Ticket> historialCompras) {
-		this.historialCompras = historialCompras;
+		Cliente.historialCompras = historialCompras;
 	}
 
 
