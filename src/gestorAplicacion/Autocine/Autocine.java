@@ -28,8 +28,8 @@ public class Autocine implements Serializable {
 	private String nombre;
 	private static List<Cliente> clientes= new ArrayList<Cliente>();
 	private static List<Funcion> cartelera= new ArrayList<Funcion>();
-	private List<Pelicula> peliculas= new ArrayList<Pelicula>();
-	private List<Sala> salas = new ArrayList<Sala>();
+	private static List<Pelicula> peliculas= new ArrayList<Pelicula>();
+	private static List<Sala> salas = new ArrayList<Sala>();
 	
 	// Constructores.
 	public Autocine(String nombre) {
@@ -295,15 +295,15 @@ public class Autocine implements Serializable {
 		return clientes;
 	}
 	public void setClientes(List<Cliente> clientes) {
-		this.clientes = clientes;
+		Autocine.clientes = clientes;
 	}
 	public List<Funcion> getCartelera() {
 		return cartelera;
 	}
 	public void setCartelera(List<Funcion> cartelera) {
-		this.cartelera = cartelera;
+		Autocine.cartelera = cartelera;
 	}
-	public List<Pelicula> getPeliculas() {
+	public static List<Pelicula> getPeliculas() {
 		return peliculas;
 	}
 	public void setPeliculas(List<Pelicula> peliculas) {

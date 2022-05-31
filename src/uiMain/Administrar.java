@@ -69,7 +69,7 @@ public class Administrar {
 		
 		ArrayList<String> generos = new ArrayList<>(Arrays.asList("Animada", "Accion", "Clasica", "Terror", "Fantasia", "Drama"));
 		for(int i = 0; i < 6; i++){
-			System.out.println(String.valueOf(i + 1)+ " " + generos.get(i));
+			System.out.println(String.valueOf(i + 1) + " " + generos.get(i));
 		}
 
 		System.out.println("Ingrese numero del genero que desea: ");
@@ -104,10 +104,10 @@ public class Administrar {
 	
 	
 	public static void eliminarPelicula(Autocine autocine) {
-		System.out.println("Peliculas disponibles:");
+		System.out.println("Peliculas disponibles: ");
 		
 		List<String> titulos= new ArrayList<String>();		
-		for(Pelicula p: autocine.getPeliculas()) {		
+		for(Pelicula p: Autocine.getPeliculas()) {		
 			System.out.println(p.getNombre());
 			titulos.add(p.getNombre());
 		}
@@ -117,7 +117,7 @@ public class Administrar {
 		
 		if(titulos.contains(eliminar)) {			
 			int pos = titulos.indexOf(eliminar);	
-			autocine.getPeliculas().remove(pos);		
+			Autocine.getPeliculas().remove(pos);		
 			System.out.println("La pelicula fue eliminada con exito");
 		}
 		else {
@@ -161,7 +161,7 @@ public class Administrar {
 		
 		int i = 1;
 		
-		for(Pelicula p: autocine.getPeliculas()) {
+		for(Pelicula p: Autocine.getPeliculas()) {
 			System.out.println(i + ": " + p.getNombre());	
 			i++;
 		}
@@ -169,7 +169,7 @@ public class Administrar {
 		System.out.println("Digite el numero de la pelicula seleccionada: ");
 		int peli = readInt();
 		
-		Pelicula pelicula = autocine.getPeliculas().get(peli - 1);
+		Pelicula pelicula = Autocine.getPeliculas().get(peli - 1);
 			
 		Funcion.crearFuncion(dia, mes, h, pelicula, seleccionada.getNumero(), autocine); 
 		System.out.println("La funcion fue generada con exito");

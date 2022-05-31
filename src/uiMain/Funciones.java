@@ -104,7 +104,7 @@ public class Funciones {
 			funcionesPelicula(autocine, id);	
 		}
 		else {
-			ArrayList<Funcion> funciones = autocine.verFuncion(dia, mes);
+			ArrayList<Funcion> funciones = Autocine.verFuncion(dia, mes);
 			List<Pelicula> peliculasMes = new ArrayList<Pelicula>();
 			
 			for(Funcion funcion: funciones) {
@@ -131,7 +131,7 @@ public class Funciones {
 			case 1: Funciones.comprar(autocine, id);
 			break;
 			
-			case 2: if(autocine.verificarCliente(id)) {
+			case 2: if(Autocine.verificarCliente(id)) {
 				Funciones.buscarPorViejo(autocine, id);
 			}
 			else {
@@ -153,12 +153,12 @@ public class Funciones {
 		System.out.println("Mes: ");
 		mes = entrada.nextInt();
 		
-		if(autocine.verFuncion(dia, mes).size() == 0) {
+		if(Autocine.verFuncion(dia, mes).size() == 0) {
 			System.out.println("No hay funciones para esta fecha, escoja una fecha valida");
 			funcionesDia(autocine, id);
 		}
 		else {
-			System.out.println(Funciones.formatearFunciones(autocine.verFuncion(dia, mes)));
+			System.out.println(Funciones.formatearFunciones(Autocine.verFuncion(dia, mes)));
 			System.out.print("¿Que desea hacer\n" + "1. Comprar\n" + "2. Volver\n");
 			opcion = entrada.nextInt();
 			
@@ -166,7 +166,7 @@ public class Funciones {
 			case 1: Funciones.comprar(autocine, id);
 			break;
 			
-			case 2: if(autocine.verificarCliente(id)) {
+			case 2: if(Autocine.verificarCliente(id)) {
 				Funciones.buscarPorViejo(autocine, id);
 			}
 			else {
@@ -181,7 +181,7 @@ public class Funciones {
 	public static void recomendadas(Autocine autocine, int id) {
 		
 		int opcion = 0;
-		System.out.println(Funciones.formatearFunciones(autocine.verFuncion(autocine.BuscadorCliente(id))));
+		System.out.println(Funciones.formatearFunciones(autocine.verFuncion(Autocine.BuscadorCliente(id))));
 		System.out.println("¿Que desea hacer?\n" + "1. Comprar\n" + "2. Volver\n");
 		Scanner entrada = new Scanner(System.in);
 		opcion = entrada.nextInt();
@@ -211,7 +211,7 @@ public class Funciones {
 		numeroTicket = entrada.nextInt();
 		Ticket ticket = autocine.BuscadorTicket(numeroTicket, funcion);
 		
-		if(funcion.ventaTicket(ticket, autocine.BuscadorCliente(id))) {
+		if(funcion.ventaTicket(ticket, Autocine.BuscadorCliente(id))) {
 			System.out.print("El precio de su boleto es: ");
 			System.out.println(ticket.calcularPrecio());	
 		}
