@@ -43,12 +43,12 @@ public class Puesto implements Serializable{
         return tipo;
     }
 
-    public void setTipo(String Tipo) {
+    public void setTipo(String tipo) {
         if(tipo.equals("PREFERENCIAL")) {
-            this.tipo = tipo.PREFERENCIAL;
+            this.tipo = Tipo.PREFERENCIAL;
         }
         else{
-            this.tipo = tipo.GENERAL;
+            this.tipo = Tipo.GENERAL;
         }
     }
     public int getNumero() {

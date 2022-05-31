@@ -94,12 +94,12 @@ public class Administrar {
 		System.out.println("Ingrese el idioma de la pelicula:");
 		
 		Scanner entra = new Scanner(System.in);
-		String idioma = entra.nextLine();
+		String lenguaje = entra.nextLine();
 		
 		System.out.println("Ingrese la edad minima para ver la pelicula: ");
-		int edad = readInt();
+		int clasificacion = readInt();
 		
-		Pelicula pelicula = new Pelicula(nombre, genero, duracion, idioma, edad, autocine);
+		Pelicula pelicula = new Pelicula(nombre, genero, duracion, lenguaje, clasificacion, autocine);
 		
 		autocine.agregarPelicula(pelicula);
 		
@@ -141,7 +141,7 @@ public class Administrar {
 		System.out.println("Digite el mes que quiere crear la funcion: ");
 		int mes = readInt();
 		
-		ArrayList<Sala> estados = autocine.salasDisponibles(mes,dia);
+		ArrayList<Sala> estados = Autocine.salasDisponibles(mes,dia);
 		
 		System.out.println("Salas disponibles para el dia/mes: " + dia + "/" + mes);
 		for(Sala d: estados) {
@@ -151,7 +151,7 @@ public class Administrar {
 		System.out.println("Seleccione el numero de la sala que quiere: ");
 		int sala = readInt();
 		
-		Sala seleccionada = autocine.buscarSala(sala);		
+		Sala seleccionada = Autocine.buscarSala(sala);
 		
 		System.out.println("Horarios disponibles de la sala: ");
 		
