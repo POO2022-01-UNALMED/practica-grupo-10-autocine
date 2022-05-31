@@ -5,9 +5,7 @@ import gestorAplicacion.Taquilla.Funcion;
 import gestorAplicacion.Taquilla.Funcion.Horario;
 import gestorAplicacion.Taquilla.Pelicula;
 import gestorAplicacion.Autocine.Autocine;
-import gestorAplicacion.Persona.Cliente;
 import gestorAplicacion.Salas.*;
-import gestorAplicacion.Taquilla.*;
 
 public class Administrar {
 	static Scanner sc = new Scanner(System.in); 

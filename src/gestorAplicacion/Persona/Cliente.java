@@ -31,7 +31,6 @@ public class Cliente implements Serializable {
 		this.id = id;
 		this.nombre = nombre;
 		this.edad = edad;
-		autocine.agregarCliente(this);
 		this.autocine=autocine;
 	}
     

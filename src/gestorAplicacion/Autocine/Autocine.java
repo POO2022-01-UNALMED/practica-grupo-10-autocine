@@ -26,8 +26,8 @@ public class Autocine implements Serializable {
 	
 	// Atributos.
 	private String nombre;
-	private List<Cliente> clientes= new ArrayList<Cliente>();
-	private List<Funcion> cartelera= new ArrayList<Funcion>();
+	private static List<Cliente> clientes= new ArrayList<Cliente>();
+	private static List<Funcion> cartelera= new ArrayList<Funcion>();
 	private List<Pelicula> peliculas= new ArrayList<Pelicula>();
 	private List<Sala> salas = new ArrayList<Sala>();
 	
@@ -101,7 +101,7 @@ public class Autocine implements Serializable {
 	 * @summary Recibe un dia y mes.
 	 * @return Una lista de funciones disponibles segun el dia y mes seleccionado.
 	 */
-	public ArrayList<Funcion> verFuncion( int dia, int mes) { 
+	public static ArrayList<Funcion> verFuncion( int dia, int mes) { 
 		ArrayList<Funcion> funciones = new ArrayList<Funcion>(); 
 		
 		for(Funcion funcion: cartelera) {
@@ -170,7 +170,7 @@ public class Autocine implements Serializable {
 	 * @summary Recibe una cedula.
 	 * @return Verifica si un cliente está en la lista de clientes.
 	 */
-	public Boolean verificarCliente(int num) {
+	public static Boolean verificarCliente(int num) {
 		ArrayList<Integer> lista = new ArrayList<Integer>();  
 		
 		for(Cliente cliente: clientes) {
@@ -192,7 +192,7 @@ public class Autocine implements Serializable {
 	 * @summary Recibe una cedula.
 	 * @return Retorna un objeto cliente cuya cedula concuerde con la ingresada.
 	 */
-	public Cliente BuscadorCliente(int num) {
+	public static Cliente BuscadorCliente(int num) {
 		ArrayList<Integer> lista = new ArrayList<Integer>();
 		
 		for(Cliente cliente: clientes) {

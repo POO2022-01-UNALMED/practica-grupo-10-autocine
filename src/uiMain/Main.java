@@ -1,9 +1,7 @@
 package uiMain;
 
 import java.util.*;
-import gestorAplicacion.Taquilla.Pelicula;
 import gestorAplicacion.Autocine.Autocine;
-import gestorAplicacion.Persona.Cliente;
 import baseDatos.Serializador;
 import baseDatos.Deserializador;
 

@@ -18,8 +18,8 @@ public class Funciones {
 		System.out.print("Digite la cedula del cliente: ");
 		Scanner entrada = new Scanner(System.in);
 		id = entrada.nextInt();
-		if(autocine.verificarCliente(id)) {
-			System.out.println(autocine.BuscadorCliente(id));
+		if(Autocine.verificarCliente(id)) {
+			System.out.println(Autocine.BuscadorCliente(id));
 			Funciones.buscarPorViejo(autocine, id);
 		}
 		else {
@@ -99,7 +99,7 @@ public class Funciones {
 		System.out.print("Mes: ");
 		mes = entrada.nextInt();
 		
-		if(autocine.verFuncion(dia, mes).size() == 0) {
+		if(Autocine.verFuncion(dia, mes).size() == 0) {
 			System.out.println("No hay funciones para esta fecha, escoja una fecha valida");
 			funcionesPelicula(autocine, id);	
 		}
