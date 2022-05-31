@@ -40,7 +40,7 @@ public class Funciones {
 		nombre = entrada.nextLine();
 		System.out.print("Digite la edad del cliente: ");
 		edad = entrada.nextInt();
-		Cliente cliente = new Cliente(nombre, edad, id, autocine);
+		Cliente cliente = new Cliente(id, nombre, edad, autocine);
 	}
 	
 	

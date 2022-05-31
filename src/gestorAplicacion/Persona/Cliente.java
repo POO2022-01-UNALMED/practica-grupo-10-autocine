@@ -11,31 +11,21 @@ import gestorAplicacion.Autocine.*;
  */
 public class Cliente implements Serializable {
  
+	// Serializacion.
+	 	private static final long serialVersionUID = 1L;
+	 	static List<Cliente> clientes;
+	 	static {
+	 		clientes = new ArrayList<Cliente>();
+	 	}
+	 	
     /*Atributos*/
     private int id;
     private String nombre;
     private int edad;
-    
-    private double dinero;
     private List<Ticket> historialCompras= new ArrayList<Ticket>(); //una lista con los boletos que ha comprado el cliente en su vida
     private Autocine autocine;
     
- // Serializacion.
- 	private static final long serialVersionUID = 1L;
- 	static List<Cliente> clientes;
- 	static {
- 		clientes = new ArrayList<Cliente>();
- 	}
-    
  
-    public double getDinero() {
-		return dinero;
-	}
-
-	public void setDinero(double dinero) {
-		this.dinero = dinero;
-	}
-
 	/*Constructores*/
     public Cliente(int id, String nombre, int edad, Autocine autocine) {
 		this.id = id;
@@ -55,8 +45,8 @@ public class Cliente implements Serializable {
 		}
 		List<Integer> veces=new ArrayList<Integer>();		//lista para guardar la frecuencia de cada genero
 		for(String genre: genreList) {
-			int num = Collections.frequency(genreList, genre);	//De la lista de géneros extrae la frecuencia de cada elemento
-			veces.add(num);
+			int occ = Collections.frequency(genreList, genre);	//De la lista de géneros extrae la frecuencia de cada elemento
+			veces.add(occ);
 		}
 		
 		return genreList.get(veces.indexOf(Collections.max(veces))); 	//se devuelve el genero de la lista que tenga el indice correspondiente al maximo de las ocurrencias de cada genero
@@ -89,23 +79,6 @@ public class Cliente implements Serializable {
         this.id = id;
     }
  
-    /**
-     * Pagamos la entrada del cine
-     *
-     * 
-     */
-    public void pagarReserva(double precio) {
-        dinero -= precio;
-    }
- 
-    /**
-     * Indicamos si el espectador tiene edad para ver la pelicula 
-     *
-
-     */
-    public boolean tieneEdad(int edadMinima) {
-        return edad >= edadMinima;
-    }
     
     public List<Ticket> getHistorialCompras() {
 		return historialCompras;
@@ -127,10 +100,6 @@ public class Cliente implements Serializable {
 		return clientes;
 	}
 
-	public static void setClientes(List<Cliente> clientes) {
-		Cliente.clientes = clientes;
-	}
- 
     
     @Override
 	public String toString() {
