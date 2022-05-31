@@ -13,9 +13,9 @@ public class Cliente implements Serializable {
  
 	// Serializacion.
 	 	private static final long serialVersionUID = 1L;
-	 	static List<Cliente> clientes;
+	 	static List<Cliente> clientess;
 	 	static {
-	 		clientes = new ArrayList<Cliente>();
+	 		clientess = new ArrayList<Cliente>();
 	 	}
 	 	
     /*Atributos*/
@@ -97,7 +97,7 @@ public class Cliente implements Serializable {
 	}
 	
 	public static List<Cliente> getClientes() {
-		return clientes;
+		return clientess;
 	}
 
     

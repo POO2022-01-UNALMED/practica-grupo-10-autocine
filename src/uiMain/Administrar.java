@@ -59,7 +59,7 @@ public class Administrar {
 		System.out.println("Ingrese el nombre de la pelicula: ");		
 		Scanner entr = new Scanner(System.in);
 		String nombre = entr.nextLine();
-		
+	
 		System.out.println("Ingrese el numero del genero que desea: ");
 		
 		ArrayList<String> generos = new ArrayList<>(Arrays.asList("Animada", "Accion", "Clasica", "Terror", "Fantasia", "Drama"));
@@ -101,17 +101,17 @@ public class Administrar {
 	public static void eliminarPelicula(Autocine autocine) {
 		System.out.println("Peliculas disponibles: ");
 		
-		List<String> titulos= new ArrayList<String>();		
+		List<String> peliculas= new ArrayList<String>();		
 		for(Pelicula p: Autocine.getPeliculas()) {		
 			System.out.println(p.getNombre());
-			titulos.add(p.getNombre());
+			peliculas.add(p.getNombre());
 		}
 		
 		System.out.println("Digite el nombre de la pelicula que quiere eliminar: ");
 		String eliminar=readString();
 		
-		if(titulos.contains(eliminar)) {			
-			int pos = titulos.indexOf(eliminar);	
+		if(peliculas.contains(eliminar)) {			
+			int pos = peliculas.indexOf(eliminar);	
 			Autocine.getPeliculas().remove(pos);		
 			System.out.println("¡La pelicula fue eliminada con exito!");
 		}

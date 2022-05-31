@@ -17,9 +17,9 @@ public abstract class Sala implements Serializable {
 
     //serializador
     private static final long serialVersionUID = 1L;
-    static List<Sala> salas;
+    static List<Sala> salass;
     static {
-        salas = new ArrayList<Sala>();
+        salass = new ArrayList<Sala>();
     }
 
         //atributos
@@ -268,9 +268,9 @@ public abstract class Sala implements Serializable {
             this.puestos = puestos;
         }
         public static List<Sala> getSalas() {
-            return salas;
+            return salass;
         }
         public static void setSalas(List<Sala> salas) {
-            Sala.salas = salas;
+            Sala.salass = salas;
         }
     }

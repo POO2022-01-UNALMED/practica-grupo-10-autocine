@@ -17,9 +17,9 @@ public class Pelicula implements Serializable {
 
     // serializacion
     private static final long serialVersionUID = 1L;
-    static List<Pelicula> peliculas;
+    static List<Pelicula> peliculass;
     static {
-        peliculas = new ArrayList<Pelicula>();
+        peliculass = new ArrayList<Pelicula>();
     }
     //artributos
 
@@ -78,10 +78,10 @@ public class Pelicula implements Serializable {
         this.clasificacion = clasificacion;
     }
     public static List<Pelicula> getPeliculas() {
-        return peliculas;
+        return peliculass;
     }
 
-    public static void setPeliculas(List<Pelicula> peliculas) {
-        Pelicula.peliculas = peliculas;
+    public static void setPeliculas(List<Pelicula> peliculass) {
+        Pelicula.peliculass = peliculass;
     }
 }
