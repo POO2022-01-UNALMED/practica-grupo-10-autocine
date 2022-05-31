@@ -26,7 +26,7 @@ public class Administrar {
 	public static void Ejecucion(Autocine autocine) {
 	
 		int opcion;
-			System.out.println("¿Que quiere hacer?\n"
+			System.out.println("Â¿Que quiere hacer?\n"
 					+ "1: Agregar una pelicula\n"
 					+ "2: Eliminar una pelicula\n"
 					+ "3: Agregar una funcion\n"
@@ -64,15 +64,18 @@ public class Administrar {
 	
 	public static void agregarPelicula(Autocine autocine) {
 
-		System.out.println("Ingrese el nombre de la pelicula: ");		
-		String nombre = readString();
+		System.out.println("Ingrese el nombre de la pelicula:");		
+		Scanner entr = new Scanner(System.in);
+		String nombre = entr.nextLine();
+		
+		System.out.println("Ingrese numero del genero que desea: ");
 		
 		ArrayList<String> generos = new ArrayList<>(Arrays.asList("Animada", "Accion", "Clasica", "Terror", "Fantasia", "Drama"));
 		for(int i = 0; i < 6; i++){
 			System.out.println(String.valueOf(i + 1) + " " + generos.get(i));
 		}
 
-		System.out.println("Ingrese numero del genero que desea: ");
+		
 		
 		String genero = generos.get(readInt() - 1);		
 
@@ -88,8 +91,10 @@ public class Administrar {
 			}
 		}
 		
-		System.out.println("Ingrese el idioma de la pelicula: ");
-		String idioma = readString();
+		System.out.println("Ingrese el idioma de la pelicula:");
+		
+		Scanner entra = new Scanner(System.in);
+		String idioma = entra.nextLine();
 		
 		System.out.println("Ingrese la edad minima para ver la pelicula: ");
 		int edad = readInt();
@@ -184,7 +189,7 @@ public class Administrar {
 		
 	public static void agregarSala(Autocine autocine) {
 		
-		System.out.println("¿Que tipo de sala quiere agregar?: \n" + "1. Sala 3D\n" + "2. Sala 2D\n");
+		System.out.println("Â¿Que tipo de sala quiere agregar?: \n" + "1. Sala 3D\n" + "2. Sala 2D\n");
 		
 		int opcion = Administrar.readInt();
 		
@@ -217,7 +222,7 @@ public class Administrar {
 		else {
 			new Sala2D(filas, columnas, filasPreferencial, autocine);	 
 		}
-		System.out.println("¡La nueva sala ha sido creada con Exito!");		
+		System.out.println("Â¡La nueva sala ha sido creada con Exito!");		
 	}
 	
 	
@@ -238,7 +243,7 @@ public class Administrar {
 		else {
 			new Sala3D(filas, columnas, gafas, autocine);	
 		}
-		System.out.println("¡La nueva sala ha sido creada con Exito!");		
+		System.out.println("Â¡La nueva sala ha sido creada con Exito!");		
 	}
 	
 	
