@@ -67,8 +67,6 @@ public class Administrar {
 			System.out.println(String.valueOf(i + 1) + ". " + generos.get(i));
 		}
 
-		
-		
 		String genero = generos.get(readInt() - 1);		
 
 		int duracion = 0;
