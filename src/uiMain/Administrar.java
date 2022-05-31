@@ -198,7 +198,6 @@ public class Administrar {
 		System.out.print("Ingresar cantidad de filas preferencial de la sala: ");
 		int filasPreferencial = Administrar.readInt();
 		
-		System.out.print("En caso de que la sala sea de tamano normal (5x5) ingrese \"0\" para filas y columnas");
 		System.out.print("Ingresar cantidad de filas: ");
 		int filas = Administrar.readInt();
 		
@@ -216,6 +215,9 @@ public class Administrar {
 	
 	
 	public static void agregarSala3D(Autocine autocine) {
+		
+		System.out.print("Ingresar cantidad de filas preferencial de la sala: ");
+		int filasPreferencial = Administrar.readInt();
 		
 		System.out.print("Ingresar cantidad de filas: ");
 		int filas = Administrar.readInt();
