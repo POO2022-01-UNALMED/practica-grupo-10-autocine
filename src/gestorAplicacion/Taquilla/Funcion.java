@@ -56,24 +56,24 @@ public class Funcion implements Serializable {
 	}
 	
 	// Atributos.
-	private int dia;
-	private int mes;
-	private Horario horario;
-	private Pelicula pelicula;
-	private Sala sala;
+	private static int dia;
+	private static int mes;
+	private static Horario horario;
+	private static Pelicula pelicula;
+	private static Sala sala;
 	private Autocine autocine;
 	private ArrayList<Ticket> tickets = new ArrayList<Ticket>();
 	private int cantidadTicketsVendidos = 0;
 	private static int cantidadFunciones;
-	private int numero;
+	private static int numero;
 	
 	// Contructor.
 	private Funcion(int dia, int mes, Horario horario, Pelicula pelicula, Sala sala, Autocine autocine) {
-		this.dia = dia;
-		this.mes = mes;
-		this.horario = horario;
-		this.pelicula = pelicula;
-		this.numero = cantidadFunciones;
+		Funcion.dia = dia;
+		Funcion.mes = mes;
+		Funcion.horario = horario;
+		Funcion.pelicula = pelicula;
+		Funcion.numero = cantidadFunciones;
 		this.setSala(sala);
 		this.setAutocine(autocine);
 		this.crearTicket();
@@ -94,7 +94,7 @@ public class Funcion implements Serializable {
 	 * @return Una funcion para una pelicula.
 	 */
 	public static Funcion crearFuncion(int dia, int mes, Horario horario, Pelicula pelicula, int num_sala, Autocine autocine) {
-		Sala sala = autocine.buscarSala(num_sala);
+		Sala sala = Autocine.buscarSala(num_sala);
 		if(sala != null) {
 			if(sala.verificarDisponibilidad(dia, mes, horario.getHora())) {
 				return new Funcion(dia, mes, horario, pelicula, sala, autocine);
@@ -179,7 +179,7 @@ public class Funcion implements Serializable {
 	 * @return Un Boolen de si se pudo o no vender un ticket. Retorna True o False segun sea el caso.
 	 */
 	public Boolean ventaTicket(Ticket ticket, Cliente cliente) {
-		if(ticket.isEstado() == true && cliente.getEdad() >= this.getPelicula().getClasificacion()) {
+		if(ticket.isEstado() == true && cliente.getEdad() >= Funcion.getPelicula().getClasificacion()) {
 			ticket.setEstado(false);
 			cliente.getHistorialCompras().add(ticket);
 			cantidadTicketsVendidos ++;
@@ -193,35 +193,35 @@ public class Funcion implements Serializable {
 	
 	
 	// Getters and Setters.{
-	public int getDia() {
+	public static int getDia() {
 		return dia;
 	}
 	public void setDia(int dia) {
-		this.dia = dia;
+		Funcion.dia = dia;
 	}
-	public int getMes() {
+	public static int getMes() {
 		return mes;
 	}
 	public void setMes(int mes) {
-		this.mes = mes;
+		Funcion.mes = mes;
 	}
-	public String getHorario() {
+	public static String getHorario() {
 		return horario.getHora();
 	}
 	public void setHorario(Horario horario) {
-		this.horario = horario;
+		Funcion.horario = horario;
 	}
-	public Pelicula getPelicula() {
+	public static Pelicula getPelicula() {
 		return pelicula;
 	}
 	public void setPelicula(Pelicula pelicula) {
-		this.pelicula = pelicula;
+		Funcion.pelicula = pelicula;
 	}
-	public Sala getSala() {
+	public static Sala getSala() {
 		return sala;
 	}
 	public void setSala(Sala sala) {
-		this.sala = sala;
+		Funcion.sala = sala;
 	}
 	public Autocine getAutocine() {
 		return autocine;
@@ -247,11 +247,11 @@ public class Funcion implements Serializable {
 	public static void setCantidadFunciones(int cantidadFunciones) {
 		Funcion.cantidadFunciones = cantidadFunciones;
 	}
-	public int getNumero() {
+	public static int getNumero() {
 		return numero;
 	}
 	public void setNumero(int numero) {
-		this.numero = numero;
+		Funcion.numero = numero;
 	}
 	public static List<Funcion> getFunciones() {
 		return funciones;

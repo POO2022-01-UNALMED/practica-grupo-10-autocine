@@ -62,7 +62,7 @@ public class Autocine implements Serializable {
 	 * @summary Recibe una pelicula, un dia y mes.
 	 * @return Una lista de funciones disponibles, que cumpla dichas condiciones.
 	 */
-	public ArrayList<Funcion> verFuncion(Pelicula pelicula, int dia, int mes) { 
+	public static ArrayList<Funcion> verFuncion(Pelicula pelicula, int dia, int mes) { 
 		ArrayList<Funcion> funciones = new ArrayList<Funcion>();
 		
 		for(Funcion funcion: cartelera) { 

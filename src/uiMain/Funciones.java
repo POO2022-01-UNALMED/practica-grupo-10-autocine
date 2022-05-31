@@ -114,21 +114,21 @@ public class Funciones {
 			List<Pelicula> peliculasMes = new ArrayList<Pelicula>();
 			
 			for(Funcion funcion: funciones) {
-				peliculasMes.add(funcion.getPelicula());
+				peliculasMes.add(Funcion.getPelicula());
 			}
 			
 			peliculasMes = peliculasMes.stream().distinct().collect(Collectors.toList());
 			System.out.println("Peliculas en el cine: ");
 			int i = 1;
 			for(Pelicula p: peliculasMes) {
-				System.out.println(i + ": " + p.getNombre());
+				System.out.println(i + ". " + p.getNombre());
 				i++;
 			}
 			
 			System.out.println("Digite el numero de la pelicula seleccionada: ");
 			int peli = entrada.nextInt();
 			Pelicula pelicula = peliculasMes.get(peli-1);
-			System.out.println(Funciones.formatearFunciones(autocine.verFuncion(pelicula, dia, mes)));
+			System.out.println(Funciones.formatearFunciones(Autocine.verFuncion(pelicula, dia, mes)));
 			
 			System.out.println("¿Que desea hacer?\n" 
 					+ " 1. Comprar.\n" 
@@ -241,14 +241,14 @@ public class Funciones {
 		String resultado = "\n\n";
 		for (Funcion funcion: funciones) {
 			String formato = "%s|%s|%s|%s";
-			String fecha = "Fecha: " + String.format("%02d/%02d", funcion.getDia(), funcion.getMes());
-			resultado += funcion.getPelicula().getNombre() + " " + funcion.getPelicula().getClasificacion() + "+" + "\n";
+			String fecha = "Fecha: " + String.format("%02d/%02d", Funcion.getDia(), Funcion.getMes());
+			resultado += Funcion.getPelicula().getNombre() + " " + Funcion.getPelicula().getClasificacion() + "+" + "\n";
 			resultado += String.format(
 				formato,
-				centerString(6, funcion.getHorario()),
-				centerString(8, "Sala " + funcion.getSala().getNumero()),
-				centerString(4, funcion.getSala().getTipo()),
-				centerString(5, String.format("%03d", funcion.getNumero())));
+				centerString(6, Funcion.getHorario()),
+				centerString(8, "Sala " + Funcion.getSala().getNumero()),
+				centerString(4, Funcion.getSala().getTipo()),
+				centerString(5, String.format("%03d", Funcion.getNumero())));
 			resultado += "\n" + fecha;
 			resultado += "\n\n";
 		}
