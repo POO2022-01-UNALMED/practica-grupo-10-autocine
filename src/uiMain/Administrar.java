@@ -141,7 +141,7 @@ public class Administrar {
 		System.out.println("Digite el mes que quiere crear la funcion: ");
 		int mes = readInt();
 		
-		ArrayList<Sala> estados = autocine.salasDisponibles(mes,dia);
+		ArrayList<Sala> estados = Autocine.salasDisponibles(mes,dia);
 		
 		System.out.println("Salas disponibles para el dia/mes: " + dia + "/" + mes);
 		for(Sala d: estados) {
@@ -151,7 +151,7 @@ public class Administrar {
 		System.out.println("Seleccione el numero de la sala que quiere: ");
 		int sala = readInt();
 		
-		Sala seleccionada = autocine.buscarSala(sala);		
+		Sala seleccionada = Autocine.buscarSala(sala);		
 		
 		System.out.println("Horarios disponibles de la sala: ");
 		
@@ -189,7 +189,7 @@ public class Administrar {
 		
 	public static void agregarSala(Autocine autocine) {
 		
-		System.out.println("Â¿Que tipo de sala quiere agregar?: \n" + "1. Sala 3D\n" + "2. Sala 2D\n");
+		System.out.println("¿Que tipo de sala quiere agregar?: \n" + "1. Sala 3D\n" + "2. Sala 2D\n");
 		
 		int opcion = Administrar.readInt();
 		
@@ -206,7 +206,7 @@ public class Administrar {
 	
 	public static void agregarSala2D(Autocine autocine) {
 		
-		System.out.print("Ingresar cantidad de filas vip de la sala: ");
+		System.out.print("Ingresar cantidad de filas preferencial de la sala: ");
 		int filasPreferencial = Administrar.readInt();
 		
 		System.out.print("En caso de que la sala sea de tamano normal (5x5) ingrese \"0\" para filas y columnas");
@@ -222,7 +222,7 @@ public class Administrar {
 		else {
 			new Sala2D(filas, columnas, filasPreferencial, autocine);	 
 		}
-		System.out.println("Â¡La nueva sala ha sido creada con Exito!");		
+		System.out.println("¡La nueva sala ha sido creada con Exito!");		
 	}
 	
 	
@@ -243,7 +243,7 @@ public class Administrar {
 		else {
 			new Sala3D(filas, columnas, gafas, autocine);	
 		}
-		System.out.println("Â¡La nueva sala ha sido creada con Exito!");		
+		System.out.println("¡La nueva sala ha sido creada con Exito!");		
 	}
 	
 	

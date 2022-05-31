@@ -4,7 +4,8 @@
  * @summary Clase que tiene la imformacion relacionada con los puestos.
  */
 package gestorAplicacion.Salas;
-import gestorAplicacion.Taquilla.Pelicula;
+import gestorAplicacion.Salas.Puesto;
+import gestorAplicacion.Salas.Puesto.Tipo;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -43,12 +44,13 @@ public class Puesto implements Serializable{
         return tipo;
     }
 
-    public void setTipo(String Tipo) {
+    
+	public void setTipo(String tipo) {
         if(tipo.equals("PREFERENCIAL")) {
-            this.tipo = tipo.PREFERENCIAL;
+            this.tipo = Tipo.PREFERENCIAL;
         }
         else{
-            this.tipo = tipo.GENERAL;
+            this.tipo = Tipo.GENERAL;
         }
     }
     public int getNumero() {
@@ -59,7 +61,7 @@ public class Puesto implements Serializable{
     }
 
     public float getPrecio() {
-        if (this.tipo == tipo.PREFERENCIAL) {
+        if (this.tipo == Tipo.PREFERENCIAL) {
             return 25000;
         }
         else{

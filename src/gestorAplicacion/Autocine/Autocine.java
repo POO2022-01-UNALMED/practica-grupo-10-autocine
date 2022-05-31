@@ -44,7 +44,7 @@ public class Autocine implements Serializable {
 	 * @summary Recibe un mes y un dia.
 	 * @return Una lista de salas disponibles.
 	 */
-	public ArrayList<Sala> salasDisponibles(int mes, int dia) {
+	public static ArrayList<Sala> salasDisponibles(int mes, int dia) {
 		ArrayList<Sala> disponibles = new ArrayList<>();
 		for(Sala sala: salas) { 
 			if(sala.unoDisponible(dia, mes)) {
@@ -157,7 +157,7 @@ public class Autocine implements Serializable {
 	public void agregarPelicula(Pelicula nuevo) {
 		peliculas.add(nuevo);
 	}
-	public void agregarSala(Sala nuevo) {
+	public static void agregarSala(Sala nuevo) {
 		salas.add(nuevo);
 	}
 	public void agregarFuncion(Funcion nuevo) {
@@ -268,7 +268,7 @@ public class Autocine implements Serializable {
 	 * @summary Recibe el numero de sala.
 	 * @return Un objeto de clase Sala, cuyo numero coincida con el ingresado.
 	 */
-	public Sala buscarSala(int num) {
+	public static Sala buscarSala(int num) {
 		List<Integer> lista = new ArrayList<Integer>();
 		
 		for(Sala sala: salas) {
@@ -307,13 +307,13 @@ public class Autocine implements Serializable {
 		return peliculas;
 	}
 	public void setPeliculas(List<Pelicula> peliculas) {
-		this.peliculas = peliculas;
+		Autocine.peliculas = peliculas;
 	}
-	public List<Sala> getSalas() {
+	public static List<Sala> getSalas() {
 		return salas;
 	}
 	public void setSalas(List<Sala> salas) {
-		this.salas = salas;
+		Autocine.salas = salas;
 	}
 	public static List<Autocine> getAutocine() {
 		return autocine;

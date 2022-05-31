@@ -46,9 +46,9 @@ public abstract class Sala implements Serializable {
 
             this.crearPuestos();
 
-            autocine.agregarSala(this);
+            Autocine.agregarSala(this);
 
-            this.numero = autocine.getSalas().size();
+            this.numero = Autocine.getSalas().size();
         }
 
 
