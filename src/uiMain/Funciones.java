@@ -240,16 +240,11 @@ public class Funciones {
 		
 		String resultado = "\n\n";
 		for (Funcion funcion: funciones) {
-			String formato = "%s|%s|%s|%s";
 			String fecha = "Fecha: " + String.format("%02d/%02d", Funcion.getDia(), Funcion.getMes());
-			resultado += Funcion.getPelicula().getNombre() + " " + Funcion.getPelicula().getClasificacion() + "+" + "\n";
-			resultado += String.format(
-				formato,
-				centerString(6, Funcion.getHorario()),
-				centerString(8, "Sala " + Funcion.getSala().getNumero()),
-				centerString(4, Funcion.getSala().getTipo()),
-				centerString(5, String.format("%03d", Funcion.getNumero())));
-			resultado += "\n" + fecha;
+			resultado += "Pelicula: " + Funcion.getPelicula().getNombre() + " | " + "Edad: " + "+" + Funcion.getPelicula().getClasificacion() + "\n"
+					+ fecha + " | " + "Hora: " + Funcion.getHorario() + "\n"
+					+ "Sala: " + Funcion.getSala().getNumero() + " | " + "Tipo: " + Funcion.getSala().getTipo() + "\n"
+					+ "Codigo: " + String.format("%03d", Funcion.getNumero());
 			resultado += "\n\n";
 		}
 		return resultado;

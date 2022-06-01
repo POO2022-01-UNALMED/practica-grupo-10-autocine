@@ -137,7 +137,7 @@ public class Administrar {
 		int i = 1;
 		System.out.println("Salas disponibles para el dia/mes: " + dia + "/" + mes);
 		for(Sala d: estados) {
-			System.out.println(i + ". " + "Sala " + d.getNumero());	
+			System.out.println(i + ". " + "Sala " + d.getNumero() + ". Tipo: " + d.getTipo());	
 			i++;
 		}
 		
@@ -161,7 +161,7 @@ public class Administrar {
 		int j = 1;
 		
 		for(Pelicula p: Autocine.getPeliculas()) {
-			System.out.println(j + " : " + p.getNombre());
+			System.out.println(j + ". " + p.getNombre());
 			j++;
 		}
 		
