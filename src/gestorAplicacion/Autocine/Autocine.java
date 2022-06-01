@@ -66,12 +66,12 @@ public class Autocine implements Serializable {
 		ArrayList<Funcion> funciones = new ArrayList<Funcion>();
 		
 		for(Funcion funcion: cartelera) { 
-			if(funcion.getPelicula() == pelicula && funcion.getDia() >= dia && funcion.getMes() == mes ) {
+			if(Funcion.getPelicula() == pelicula && Funcion.getDia() >= dia && Funcion.getMes() == mes ) {
 				funciones.add(funcion);
 			}
 		}
 		for(Funcion funcion: cartelera) { 
-			if(funcion.getPelicula() == pelicula && funcion.getMes() > mes ){
+			if(Funcion.getPelicula() == pelicula && Funcion.getMes() > mes ){
 				funciones.add(funcion);
 			}
 		}
@@ -88,7 +88,7 @@ public class Autocine implements Serializable {
 		ArrayList<Funcion> funciones = new ArrayList<Funcion>();
 		
 		for(Funcion funcion: cartelera) {
-			if(funcion.getPelicula().getGenero() == cliente.GeneroMasVisto()) {	
+			if(Funcion.getPelicula().getGenero() == cliente.GeneroMasVisto()) {	
 			}
 		}
 		return funciones;
@@ -105,7 +105,7 @@ public class Autocine implements Serializable {
 		ArrayList<Funcion> funciones = new ArrayList<Funcion>(); 
 		
 		for(Funcion funcion: cartelera) {
-			if(funcion.getDia() == dia && funcion.getMes() == mes){
+			if(Funcion.getDia() == dia && Funcion.getMes() == mes){
 				funciones.add(funcion);
 			}
 		}
@@ -122,7 +122,7 @@ public class Autocine implements Serializable {
 		ArrayList<Funcion> funciones = new ArrayList<Funcion>(); 
 		
 		for(Funcion funcion: cartelera) {
-			if(funcion.getMes() == mes) {
+			if(Funcion.getMes() == mes) {
 				funciones.add(funcion);
 			}
 		}
@@ -139,7 +139,7 @@ public class Autocine implements Serializable {
 		ArrayList<Funcion> funciones = new ArrayList<Funcion>(); 
 	
 		for(Funcion funcion: cartelera) {
-			if(funcion == ticket.getFuncion()) {
+			if(funcion == Ticket.getFuncion()) {
 				funciones.add(funcion);
 			}
 		}

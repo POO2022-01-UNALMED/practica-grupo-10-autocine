@@ -228,7 +228,7 @@ public class Funciones {
 		
 		if(funcion.ventaTicket(ticket, Autocine.BuscadorCliente(id))) {
 			System.out.print("El precio de su ticket es: ");
-			System.out.println(ticket.calcularPrecio());	
+			System.out.println(Ticket.calcularPrecio());	
 		}
 		else {
 			System.out.println("El ticket no esta disponible o no cumple con la edad minima para la pelicula.");

@@ -17,9 +17,9 @@ public class Funcion implements Serializable {
 	
 	// Serializacion.
 	private static final long serialVersionUID = 1L;
-	static List<Funcion> funciones;
+	static List<Funcion> funcioness;
 	static {
-		funciones = new ArrayList<Funcion>();
+		funcioness = new ArrayList<Funcion>();
 	}
 	
 	// Enum Horario.
@@ -254,10 +254,10 @@ public class Funcion implements Serializable {
 		Funcion.numero = numero;
 	}
 	public static List<Funcion> getFunciones() {
-		return funciones;
+		return funcioness;
 	}
 	public static void setFunciones(List<Funcion> funciones) {
-		Funcion.funciones = funciones;
+		Funcion.funcioness = funciones;
 	}
 	
 
