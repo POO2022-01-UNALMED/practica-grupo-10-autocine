@@ -91,7 +91,7 @@ public class Administrar {
 		
 		Pelicula pelicula = new Pelicula(nombre, genero, duracion, idioma, edad, autocine);
 		
-		Autocine.agregarPelicula(pelicula);
+		// Autocine.agregarPelicula(pelicula);
 		
 		System.out.println("¡La pelicula fue creada con exito!");
 	}
