@@ -108,7 +108,8 @@ public class Administrar {
 		}
 		
 		System.out.println("Digite el nombre de la pelicula que quiere eliminar: ");
-		String eliminar=readString();
+		Scanner entr = new Scanner(System.in);
+		String eliminar = entr.nextLine();
 		
 		if(peliculas.contains(eliminar)) {			
 			int pos = peliculas.indexOf(eliminar);	
