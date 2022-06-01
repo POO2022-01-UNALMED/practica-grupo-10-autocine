@@ -91,8 +91,6 @@ public class Administrar {
 		
 		Pelicula pelicula = new Pelicula(nombre, genero, duracion, idioma, edad, autocine);
 		
-		// Autocine.agregarPelicula(pelicula);
-		
 		System.out.println("¡La pelicula fue creada con exito!");
 	}
 	
@@ -107,7 +105,7 @@ public class Administrar {
 			peliculas.add(p.getNombre());
 		}
 		
-		System.out.println("Digite el nombre de la pelicula que quiere eliminar: ");
+		System.out.println("Digite el nombre de la pelicula que desea eliminar: ");
 		Scanner entr = new Scanner(System.in);
 		String eliminar = entr.nextLine();
 		
@@ -126,22 +124,22 @@ public class Administrar {
 	
 	public static void generarFuncion(Autocine autocine) {
 	
-		System.out.println("Digite el dia que quiere crear la funcion: ");
+		System.out.println("Digite el dia que desea crear la funcion: ");
 		int dia = readInt();
 		
-		System.out.println("Digite el mes que quiere crear la funcion: ");
+		System.out.println("Digite el mes que desea crear la funcion: ");
 		int mes = readInt();
 		
 		ArrayList<Sala> estados = Autocine.salasDisponibles(mes,dia);
 		
 		int i = 1;
-		System.out.println("Salas disponibles para el dia/mes: " + dia + "/" + mes);
+		System.out.println("Salas disponibles para el Dia/Mes: " + dia + "/" + mes);
 		for(Sala d: estados) {
 			System.out.println(i + ". " + "Sala " + d.getNumero() + ". Tipo: " + d.getTipo());	
 			i++;
 		}
 		
-		System.out.println("Seleccione el numero de la sala que quiere: ");
+		System.out.println("Seleccione el numero de la sala que desea: ");
 		int sala = readInt();
 		
 		Sala Seleccionada = Autocine.buscarSala(sala);
@@ -177,7 +175,7 @@ public class Administrar {
 
 	public static void agregarSala(Autocine autocine) {
 		
-		System.out.println("¿Que tipo de sala quiere agregar?: \n" 
+		System.out.println("¿Que tipo de sala desea agregar?: \n" 
 				+ " 1. Sala 3D.\n" 
 				+ " 2. Sala 2D.\n");
 		
@@ -205,12 +203,8 @@ public class Administrar {
 		System.out.print("Ingresar cantidad de columnas: ");
 		int columnas = Administrar.readInt();
 		
-		if(filas == 0 && columnas == 0) {
-			new Sala2D(filasPreferencial, autocine);		
-		}
-		else {
-			new Sala2D(filas, columnas, filasPreferencial, autocine);	 
-		}
+		new Sala2D(filas, columnas, filasPreferencial, autocine);	 
+		
 		System.out.println("¡La nueva sala ha sido creada con Exito!");		
 	}
 	
