@@ -28,14 +28,14 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		System.out.println("°BIENVENIDO AL AUTOCINE!");
+		System.out.println("„ÄÅIENVENIDO AL AUTOCINE!");
 		int opcion;
 		Autocine autocine = Deserializador.deserializador();
 		do {
-			System.out.println("øQue desea hacer?\n" 
+			System.out.println("ÁÜπue desea hacer?\n" 
 					+ " 1. Vender Tickets.\n" 
 					+ " 2. Administrar AUTOCINE.\n" 
-					+ " 3. Cerrar.");
+					+ " 3. Cerrar AUTOCINE.");
 			
 			Scanner entrada = new Scanner(System.in);
 			opcion = entrada.nextInt();
@@ -66,7 +66,7 @@ public class Main {
 		}
 		else {
 			datos(autocine, id);
-			System.out.println("°El cliente ha sido registrado con exito!");
+			System.out.println("‚Äßl cliente ha sido registrado con exito!");
 			System.out.println("");
 			buscarPorNuevo(autocine, id);
 		}
@@ -115,7 +115,7 @@ public class Main {
 	public static void buscarPorNuevo(Autocine autocine, int id) {
 		
 		int opcion = 0;
-		System.out.print("øQuiere buscar pelicula por:\n" 
+		System.out.print("ÁÜπuiere buscar pelicula por:\n" 
 				+ " 1. Funciones.\n" 
 				+ " 2. Pelicula.\n");
 		Scanner entrada = new Scanner(System.in);
@@ -172,7 +172,7 @@ public class Main {
 			Pelicula pelicula = peliculasMes.get(peli-1);
 			System.out.println(formatearFunciones(Autocine.verFuncion(pelicula, dia, mes)));
 			
-			System.out.println("øQue desea hacer?\n" 
+			System.out.println("ÁÜπue desea hacer?\n" 
 					+ " 1. Comprar.\n" 
 					+ " 2. Volver.\n");
 			
@@ -211,7 +211,7 @@ public class Main {
 		}
 		else {
 			System.out.println(formatearFunciones(Autocine.verFuncion(dia, mes)));
-			System.out.print("øQue desea hacer\n" 
+			System.out.print("ÁÜπue desea hacer\n" 
 					+ " 1. Comprar.\n" 
 					+ " 2. Volver.\n");
 			
@@ -237,7 +237,7 @@ public class Main {
 		
 		int opcion = 0;
 		System.out.println(formatearFunciones(autocine.verFuncion(Autocine.BuscadorCliente(id))));
-		System.out.println("øQue desea hacer?\n" 
+		System.out.println("ÁÜπue desea hacer?\n" 
 				+ "1. Comprar.\n" 
 				+ "2. Volver.\n");
 		
@@ -317,7 +317,7 @@ public class Main {
 	public static void Ejecucion(Autocine autocine) {
 	
 		int opcion;
-			System.out.println("øQue quiere hacer?\n"
+			System.out.println("ÁÜπue quiere hacer?\n"
 					+ " 1. Agregar una pelicula.\n"
 					+ " 2. Eliminar una pelicula.\n"
 					+ " 3. Agregar una funcion.\n"
@@ -381,7 +381,7 @@ public class Main {
 		
 		Pelicula pelicula = new Pelicula(nombre, genero, duracion, idioma, edad, autocine);
 		
-		System.out.println("°La pelicula fue creada con exito!");
+		System.out.println("‚Ä•a pelicula fue creada con exito!");
 	}
 	
 	
@@ -401,7 +401,7 @@ public class Main {
 		if(peliculas.contains(eliminar)) {			
 			int pos = peliculas.indexOf(eliminar);	
 			Autocine.getPeliculas().remove(pos);		
-			System.out.println("°La pelicula fue eliminada con exito!");
+			System.out.println("‚Ä•a pelicula fue eliminada con exito!");
 		}
 		else {
 			System.out.println("Digite un nombre valido.");	
@@ -457,13 +457,13 @@ public class Main {
 		Pelicula pelicula = Autocine.getPeliculas().get(peli - 1);
 			
 		Funcion.crearFuncion(dia, mes, horario, pelicula, Seleccionada.getNumero(), autocine);
-		System.out.println("°La funcion fue generada con exito!");
+		System.out.println("‚Ä•a funcion fue generada con exito!");
 	}
 	
 
 	public static void agregarSala(Autocine autocine) {
 		
-		System.out.println("øQue tipo de sala desea agregar?: \n" 
+		System.out.println("ÁÜπue tipo de sala desea agregar?: \n" 
 				+ " 1. Sala 3D.\n" 
 				+ " 2. Sala 2D.\n");
 		
@@ -492,7 +492,7 @@ public class Main {
 		
 		new Sala2D(filas, columnas, filasPreferencial, autocine);	 
 		
-		System.out.println("°La nueva sala ha sido creada con Exito!");		
+		System.out.println("‚Ä•a nueva sala ha sido creada con Exito!");		
 	}
 	
 	
@@ -516,7 +516,7 @@ public class Main {
 		else {
 			new Sala3D(filas, columnas, gafas, autocine);	
 		}
-		System.out.println("°La nueva sala ha sido creada con Exito!");		
+		System.out.println("‚Ä•a nueva sala ha sido creada con Exito!");		
 	}
 
 	
