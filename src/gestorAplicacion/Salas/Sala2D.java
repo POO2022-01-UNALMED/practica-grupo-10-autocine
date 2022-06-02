@@ -3,6 +3,12 @@ import java.io.Serializable;
 import java.util.*;
 import gestorAplicacion.Autocine.*;
 
+/**
+ * @author Jimena Uribe Giraldo
+ * @param Clase Sala2D.
+ * @summary Clase que que hereda de la Clase Sala. En esta se crean los puestos para la Sala 2D.
+ */
+
 public class Sala2D extends Sala implements Serializable{
 	// Serializacion.
 		private static final long serialVersionUID = 1L;
