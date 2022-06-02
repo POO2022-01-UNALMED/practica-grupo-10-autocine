@@ -14,8 +14,8 @@ public class Main {
 		Autocine autocine = Deserializador.deserializador();
 		do {
 			System.out.println("¿Que desea hacer?\n" 
-					+ " 1. Vender.\n" 
-					+ " 2. Administrar.\n" 
+					+ " 1. Vender Tickets.\n" 
+					+ " 2. Administrar AUTOCINE.\n" 
 					+ " 3. Cerrar.");
 			
 			Scanner entrada = new Scanner(System.in);
