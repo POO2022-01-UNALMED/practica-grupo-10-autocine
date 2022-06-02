@@ -16,22 +16,9 @@ import gestorAplicacion.Taquilla.Ticket;
 import gestorAplicacion.Persona.Cliente;
 import gestorAplicacion.Salas.Sala2D;
 
-/**
- * Se utiliza para serializar todos los objetos creados durante la ejecucion
- * del proyecto
- * @author Erik Gonzalez
- * @author Felipe Miranda
- */
+
 public class Serializador {
-	/**
-	 * Serializamos una lista por el nombre de la clase
-	 * 
-	 * @param <E>       el generico se usa para poder agredar las clases que se
-	 *                  crearon
-	 * @param lista     Una lista de objetos
-	 * @param className El nombre de la clase que queremos usar como nombre del
-	 *                  archivo
-	 */
+
 	public static <E> void serializar(List<E> lista, String className) {
 		FileOutputStream fileOut;
 
