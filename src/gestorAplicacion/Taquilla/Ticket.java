@@ -6,7 +6,10 @@ import gestorAplicacion.Salas.Puesto;
 import gestorAplicacion.Salas.Puesto.Tipo;
 import gestorAplicacion.Persona.Cliente;
 
-
+/**
+ * @author Jimena Uribe Giraldo.
+ * @summary En esta clase todo lo relacionado a Ticket (Boleto), puesto, precio, función
+ */
 public class Ticket implements Serializable{
 	
 	// Serializacion.
