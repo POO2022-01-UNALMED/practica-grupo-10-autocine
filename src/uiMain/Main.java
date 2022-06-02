@@ -265,7 +265,7 @@ public class Main {
 		Funcion funcion = Autocine.BuscadorFuncion(numeroFuncion);
 		System.out.println(funcion.verDisponiblidad());
 		
-		System.out.print("Ingrese el codigo del ticket que desea comprar: ");
+		System.out.print("Ingrese el codigo del puesto que desea comprar: ");
 		numeroTicket = entrada.nextInt();
 		Ticket ticket = Autocine.BuscadorTicket(numeroTicket, funcion);
 		
