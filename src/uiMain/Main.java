@@ -1,6 +1,7 @@
 package uiMain;
 
 import java.util.*;
+
 import java.util.stream.Collectors;
 
 import gestorAplicacion.Autocine.Autocine;
@@ -14,6 +15,14 @@ import gestorAplicacion.Taquilla.Ticket;
 import gestorAplicacion.Taquilla.Funcion.Horario;
 import baseDatos.Serializador;
 import baseDatos.Deserializador;
+
+/**
+ * @author Jimena Uribe Giraldo.
+ * @author Daniel Alejandro Giraldo Giraldo.
+ * @author Jhon Ever Gallego Atehortua.
+ * @param Clase Main.
+ * @summary Clase que contiene el main.
+ */
 
 public class Main {
 	
@@ -44,7 +53,7 @@ public class Main {
 	}
 	
 	
-public static void clienteNuevoOViejo(Autocine autocine) {
+	public static void clienteNuevoOViejo(Autocine autocine) {
 		
 		int id;
 		int opcion;
@@ -184,6 +193,7 @@ public static void clienteNuevoOViejo(Autocine autocine) {
 		}
 	}
 	
+	
 	public static void funcionesDia(Autocine autocine, int id) {
 		
 		int opcion = 0;
@@ -288,7 +298,8 @@ public static void clienteNuevoOViejo(Autocine autocine) {
 		return String.format("%-" + width + "s", String.format("%" + (s.length() + (width - s.length()) / 2) + "s", s));
 	}
 	
-static Scanner sc = new Scanner(System.in); 
+	
+	static Scanner sc = new Scanner(System.in); 
 	
 	static int readInt() {
 		return sc.nextInt();
@@ -333,7 +344,6 @@ static Scanner sc = new Scanner(System.in);
 	}
 
 		
-	
 	public static void agregarPelicula(Autocine autocine) {
 
 		System.out.println("Ingrese el nombre de la pelicula: ");		
@@ -375,7 +385,6 @@ static Scanner sc = new Scanner(System.in);
 	}
 	
 	
-	
 	public static void eliminarPelicula(Autocine autocine) {
 		System.out.println("Peliculas disponibles: ");
 		
@@ -399,7 +408,6 @@ static Scanner sc = new Scanner(System.in);
 			eliminarPelicula(autocine);
 		}
 	}
-	
 	
 	
 	public static void generarFuncion(Autocine autocine) {
@@ -469,7 +477,6 @@ static Scanner sc = new Scanner(System.in);
 		break;
 		}	
 	}
-	
 	
 	
 	public static void agregarSala2D(Autocine autocine) {
