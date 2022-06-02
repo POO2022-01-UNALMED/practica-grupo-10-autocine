@@ -4,9 +4,9 @@ import java.util.*;
 import gestorAplicacion.Taquilla.*;
 import gestorAplicacion.Autocine.*;
 
-
 /**
- * Clase Cliente, lleva todo lo relativo a la información del espectador
+ * @author Jimena Uribe Giraldo.
+ * @summary Clase Cliente, lleva todo lo relativo a la información del espectador
  *
  */
 public class Cliente implements Serializable {
@@ -41,15 +41,15 @@ public class Cliente implements Serializable {
 		List<String> genreList=new ArrayList<String>();		//lista con los generos que ha visto el cliente
 		for(Ticket ticket: historialCompras) {
 			Ticket.getFuncion();
-			genreList.add(Funcion.getPelicula().getGenero()); 	//Recorre el historial de compras del cliente y anexa de los boletos sus generos
+			genreList.add(Funcion.getPelicula().getGenero()); 	//Recorre el historialdel cliente y anexa sus generos
 		}
 		List<Integer> veces=new ArrayList<Integer>();		//lista para guardar la frecuencia de cada genero
 		for(String genre: genreList) {
-			int occ = Collections.frequency(genreList, genre);	//De la lista de géneros extrae la frecuencia de cada elemento
+			int occ = Collections.frequency(genreList, genre);	//De la lista de géneros extrae la frecuencia
 			veces.add(occ);
 		}
 		
-		return genreList.get(veces.indexOf(Collections.max(veces))); 	//se devuelve el genero de la lista que tenga el indice correspondiente al maximo de las ocurrencias de cada genero
+		return genreList.get(veces.indexOf(Collections.max(veces))); 	//devuelve el género más visto
 		
 	}
     
