@@ -17,22 +17,9 @@ import gestorAplicacion.Taquilla.Pelicula;
 import gestorAplicacion.Taquilla.Ticket;
 import gestorAplicacion.Persona.Cliente;
 import gestorAplicacion.Salas.Sala2D;
-/**
- * Clase para deserializar los objetos que se crearon en ejecucion
- * @author Erik Gonzalez
- * @author Felipe Miranda
- */
+
 public class Deserializador {
-	/**
-	 * Utilizamos clases genericas para permitir reutilizar la funcion para todas
-	 * las clases del proyecto
-	 * 
-	 * @param <E>       el generico se usa para poder agredar las clases que se
-	 *                  crearon
-	 * @param lista     Una lista de objetos
-	 * @param className El nombre de la clase que queremos usar como nombre del
-	 *                  archivo
-	 */
+	
 	public static <E> void deserializador(List<E> list, String className) {
 		FileInputStream fileIn;
 		try {
