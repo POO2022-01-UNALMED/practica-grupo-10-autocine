@@ -1,8 +1,9 @@
-#*
+#**
 #* @author: Jhon Ever Gallego Atehortua.
 #* @param: Clase Autocine.
 #* @summary: Clase Autocine. Clase que contiene as salas, funciones, peliculas, cientes y metodos para a creación, modificación y observación de los mismos.
-#
+#**
+
 from gestionAplicacion.taquilla.funcion import Funcion
 from gestionAplicacion.taquilla.pelicula import Pelicula
 from gestionAplicacion.taquilla.horario import Horario
