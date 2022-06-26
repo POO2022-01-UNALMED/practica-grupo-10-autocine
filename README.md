@@ -3,7 +3,7 @@
 Materia: Programación Orientada a Objetos.
 Profesor: Jaime Alberto Guzman Luna.
 
-Practica 2.
+Practica 1 y 2.
 
 Integrantes (Grupo 2 / Equipo 10):
 * Jimena Uribe Giraldo - jiuribeg@unal.edu.co 
