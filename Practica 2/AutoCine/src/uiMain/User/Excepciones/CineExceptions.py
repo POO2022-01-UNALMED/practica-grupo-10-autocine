@@ -1,4 +1,4 @@
 # Clase base de excepciones propias.
 
-class CineExceprions(Exception):
+class CineExceptions(Exception):
     pass
