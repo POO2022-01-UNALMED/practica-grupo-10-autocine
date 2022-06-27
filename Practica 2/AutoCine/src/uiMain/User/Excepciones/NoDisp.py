@@ -1,6 +1,6 @@
 # Clase de la excepcion relacionada al funcionamiento del programa, centrada en la selección de funciones y la no disponibilidad.
 
-from uiMain.User.Exceptions.Funcionamiento import Funcionamiento
+from uiMain.User.Excepciones.Funcionamiento import Funcionamiento
 from tkinter import messagebox
 
 class NoDisp(Funcionamiento):

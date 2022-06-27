@@ -10,15 +10,15 @@ from tkinter import *
 from tkinter import messagebox
 from uiMain.User.Excepciones.NotChair import NotChair
 from uiMain.User.ZonaA import ZonaA
-from gestionAplicacion.Autocine.Autocine import Autocine
-from gestionAplicacion.Taquilla.Pelicula import Pelicula
-from gestionAplicacion.Taquilla.Funcion import Funcion
+from gestorAplicacion.Autocine.Autocine import Autocine
+from gestorAplicacion.Taquilla.Pelicula import Pelicula
+from gestorAplicacion.Taquilla.Funcion import Funcion
 from uiMain.User.FieldFrame import FieldFrame
-from gestionAplicacion.Salas.Sala2D import Sala2D
-from gestionAplicacion.Salas.Sala3D import Sala3D
+from gestorAplicacion.Salas.Sala2D import Sala2D
+from gestorAplicacion.Salas.Sala3D import Sala3D
 from uiMain.User.FieldFrame import FieldFrame
 import uiMain.User.Venta as Venta
-from gestionAplicacion.Taquilla.Horario import Horario
+from gestorAplicacion.Taquilla.Funcion import Horario
 from uiMain.User.Excepciones.NotIn import NotIn
 from uiMain.User.Excepciones.NoTipo import NoTipo
 from uiMain.User.Excepciones.RangoNoPer import RangoNoPer
@@ -61,7 +61,7 @@ class ZonaB:
         self.cambiar()
         self.titulo.configure(text="Venta")
         self.texto.configure(text="Permite vender buscando por diferentes peliculas")
-        venta.ventana(self, self.cuerpo, self.autocine) # Se llama a la clase venta pasandole frame y cine como argumentos.
+        Venta.ventana(self, self.cuerpo, self.autocine) # Se llama a la clase venta pasandole frame y cine como argumentos.
        
     # Metodo para agregar una pelicula.
     def agregarPelicula(self):
