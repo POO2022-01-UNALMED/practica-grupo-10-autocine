@@ -65,7 +65,7 @@ class First(Frame):
         # Frame donde van las descripciones.
         frameParte=Frame(frame2, height=50, bg="gray")
         self.parteIns=Label(frameParte, text="Pulse sobre cada \n text para cambiar")
-        self.parte1=Label(frameParte, text="Soy Jimena Uribe Giraldo, tengo ")
+        self.parte1=Label(frameParte, text="Soy Jimena Uribe Giraldo, tengo 19 años y soy de Estadística")
         self.parte2=Label(frameParte, text="Soy Daniel Alejandro Giraldo Giraldo, tengo ")
         self.parte3=Label(frameParte, text="Soy Jhon Ever Gallego Atehortua, tengo ")
         
