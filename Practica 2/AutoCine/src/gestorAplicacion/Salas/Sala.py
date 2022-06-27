@@ -11,23 +11,11 @@ from gestorAplicacion import Taquilla.Funcion
 
 class Sala:
 
-    #serializador
-    _SERIALVERSIONUID = 1
-    salass = None
-    @staticmethod
-    def _static_initializer():
-        gestorAplicacion.Salas.Sala.salass = []
-
-    _static_initializer()
 
     #atributos
 
-
-
-    #Constructores
-
     def __init__(self, filas, columnas, filaspreferencial, precio, autocine):
-        #instance fields found by Java to Python Converter:
+
         self.numero = 0
         self.filas = 0
         self.columnas = 0
@@ -148,28 +136,92 @@ class Sala:
             return False
     def verHorarios(self, dia, mes):
 
-        consulta = "" + str(dia) + str(mes)
-        fechas = []
-        horarios = []
-        disponibles = ["12:00", "14:00", "16:00", "18:00", "20:00", "22:00"]
+    consulta = "" + str(dia) + str(mes)
+    fechas = []
+    horarios = []
+    disponibles = ["12:00", "14:00", "16:00", "18:00", "20:00", "22:00"]
 
-        for func in self.funciones:
+    for func in funciones:
 
-            info = "" + func.getDia() + func.getMes()
-            fechas.append(info)
-            info = ""
-
-
-        i = 0
-        while i < len(fechas):
-            if fechas[i] == consulta:
-                horarios.append(self.funciones[i].getHorario())
-            i += 1
+        info = "" + func.getDia() + func.getMes()
+        fechas.append(info)
+        info = ""
 
 
-//====================================================================================================
-//End of the allowed output for the Free Edition of Java to Python Converter.
+    i = 0
+    while i < len(fechas):
+        if fechas[i] == consulta:
+            horarios.append(funciones.get(i).getHorario())
+        i += 1
 
-//To purchase the Premium Edition, visit our website:
-//https://www.tangiblesoftwaresolutions.com/order/order-java-to-python.html
-//====================================================================================================
+    for horario in horarios:
+        disponibles.remove(horario)
+
+    respuesta = ""
+
+    for d in disponibles:
+        respuesta += d + "\n"
+
+    return respuesta
+
+
+
+#
+#getting and setting
+#
+
+def getTipo(self):
+    #returna el tipo en String
+
+    if isinstance(self, Sala2D):
+        return "2D"
+    else:
+        return "3D"
+def getNumero(self):
+    return numero
+
+def setNumero(self, numero):
+    self.numero = numero
+
+def getFilas(self):
+    return filas
+
+def setFilas(self, filas):
+    self.filas = filas
+
+def getColumnas(self):
+    return columnas
+
+def setColumnas(self, columnas):
+    self.columnas = columnas
+
+def getFilasPreferencial(self):
+    return filasPreferencial
+
+def setFilasPreferencial(self, filasPreferencial):
+    self.filasPreferencial = filasPreferencial
+
+def getPrecio(self):
+    return precio
+
+def setPrecio(self, precio):
+    self.precio = precio
+
+def getAutocine(self):
+    return autocine
+
+def setAutocine(self, autocine):
+    self.autocine = autocine
+
+def getPuestos(self):
+    return puestos
+
+def setPuestos(self, puestos):
+    self.puestos = puestos
+@staticmethod
+def getSalas():
+    return salass
+@staticmethod
+def setSalas(salas):
+    Sala.salass = salas
+}

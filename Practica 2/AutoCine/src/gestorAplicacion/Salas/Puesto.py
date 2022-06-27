@@ -11,16 +11,6 @@ from gestorAplicacion import Salas.Puesto.Tipo
 #clase
 class Puesto:
 
-    #serializacion
-
-    _SERIALVERSIONUID = 1
-    puestos = None
-    @staticmethod
-    def _static_initializer():
-        gestorAplicacion.Salas.Puesto.puestos = []
-
-    _static_initializer()
-
     #tipo
 
     class Tipo(Enum):
@@ -29,11 +19,7 @@ class Puesto:
 
         #atributos
 
-
-    #metodos
-
     def __init__(self, tipo, numero):
-        #instance fields found by Java to Python Converter:
         self._tipo = 0
         self._numero = 0
         self._precio = 0

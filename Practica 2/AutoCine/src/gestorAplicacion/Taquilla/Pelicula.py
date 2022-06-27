@@ -11,18 +11,7 @@ from gestorAplicacion import Salas.Sala
 # clase
 class Pelicula:
 
-    # serializacion
-    _SERIALVERSIONUID = 1
-    peliculass = None
-    @staticmethod
-    def _static_initializer():
-        gestorAplicacion.Taquilla.Pelicula.peliculass = []
-
-    _static_initializer()
     #artributos
-
-
-    # constructor
 
     def __init__(self, nombre, genero, duracion, lenguaje, clasificacion, autocine):
         #instance fields found by Java to Python Converter:
