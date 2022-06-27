@@ -10,9 +10,11 @@ from tkinter import NONE
 from xmlrpc.client import Boolean
 from enum import Enum
 
+from gestorAplicacion.Autocine.Autocine import Autocine
 from gestorAplicacion.Taquilla.Funcion import Horario
 from gestorAplicacion.Taquilla.Ticket import Ticket
 from gestorAplicacion.Salas.Sala import Sala
+from gestorAplicacion.Persona.Cliente import Cliente
 
 
 # Clase.
@@ -39,7 +41,7 @@ class Funcion:
     def getHorario(cls,hora)->"Horario": 
         horarios=[cls.UNO, cls.DOS, cls.TRES, cls.CUATRO, cls.CINCO, cls.SEIS]
         for horario in horarios:        
-            if(hora == horario.getHora()):   
+            if(hora == Funcion.getHora()):   
                 return horario     
         return Horario(None)
 
@@ -60,11 +62,11 @@ class Funcion:
         self.setSala(sala) 
         self.setAutocine(autocine)
         
-        sala.agregarFuncion(self)
-        self._numero = len(autocine.getCartelera()) + 1 
+        Sala.agregarFuncion(self)
+        self._numero = len(Autocine.getCartelera()) + 1 
         self._cantidadBoletosVendidos:int=0
-        autocine.agregarFuncion(self)
-        self.crearBoleteria()         
+        Autocine.agregarFuncion(self)
+        self.crearTicket()         
 
     # Metodos.
 	#**
@@ -79,34 +81,16 @@ class Funcion:
 	#**
     @classmethod
     def crearFuncion(cls, dia: int, mes: int, horario: Horario, pelicula, num_sala: int, autocine):
-        sala = autocine.buscarSala(num_sala)
+        sala = Autocine.buscarSala(num_sala)
         if(sala != None): 
-            if(sala.verificarDisponibilidad(dia, mes, horario.getHora())):
+            if(Sala.verificarDisponibilidad(dia, mes, Funcion.getHora())):
                 return Funcion(dia, mes, horario, pelicula, sala, autocine)  
             else:
                 return None
         else:
             return None
 
-    @classmethod
-    def formatearFunciones(cls,funciones):
-        #Recibe unas funciones y procede a organizarlas de forma adecuada para el cliente
-
-        resultado = ""
-        for funcion in funciones:
-            formato = "{}|{}|{}|{}"
-            fecha = "Fecha: " + "{:>02d}/{:>02d}".format(funcion.getDia(),funcion.getMes())
-            resultado += str(funcion.getPelicula().getNombre())+" "+str(funcion.getPelicula().getClasificacion())+"+"+"\n"
-
-            resultado += formato.format(funcion.getHorario().getHora().center(6),
-                                        ("Sala "+str(funcion.getSala().getNumero())).center(8),
-                                        str(funcion.getSala().getTipo()).center(4),
-                                        "{:>3d}".format(funcion.getNumero()).center(5))
-            resultado +=  "\n" + fecha
-            resultado += "\n\n"
-        return resultado
-
-
+    
     #**
 	#* @summary Metodo que se encarga de crear un boleto para cada puesto.
 	#**
@@ -129,7 +113,7 @@ class Funcion:
         total = []   
         for ticket in self._tickets:
             if ticket != None:                                
-                tupla_tickets: tuple = (ticket.isDisponibilidad(), ticket.tipoString() + str(ticket.getNum_puesto()))    
+                tupla_tickets: tuple = (Ticket.isEstado(), Ticket.tipoString() + str(Ticket.getNum_puesto()))    
                 total.append(tupla_tickets)
         return total
     
@@ -141,11 +125,10 @@ class Funcion:
 	#* @return Un Boolen de si se pudo o no vender un ticket. Retorna True o False segun sea el caso.
 	#**
     def VentaTicket(self, ticket, cliente) -> bool:
-        if (ticket.isDisponibilidad() == True and cliente.getEdad() >= self.getPelicula().getClasificacion()):
-            ticket.setDisponibilidad(False) 
-            cliente.getHistorialCompras().append(ticket)   
+        if (Ticket.isEstado() == True and Cliente.getEdad() >= self.getPelicula().getClasificacion()):
+            Ticket.setEstado(False)   
             self._cantidadTicketsVendidos+=1    
-            ticket.calcularPrecioDefinitivo(cliente)    
+            Ticket.calcularPrecioDefinitivo(cliente)    
             return True
         else:
             return False

@@ -34,7 +34,7 @@ class Autocine:
         disponibles = list()
         
         for sala in self._salas:
-            if sala.unoDisponible(mes, dia):
+            if Sala.unoDisponible(mes, dia):
                 disponibles.append(sala)
                 
         return disponibles
@@ -51,22 +51,21 @@ class Autocine:
     def verFuncion(self, *args) -> list:
         funciones: list = []
 
-        # Este es el ver funcion que recibe pelicula, dia, mes.
-        if(len(args) == 3):
+        if (len(args) == 3):
             pelicula: Pelicula = args[0]
             dia, mes = args[1:]
             for funcion in self.getCartelera():
-                if(funcion.getPelicula() == pelicula and funcion.getDia() >= dia and funcion.getMes() == mes):
+                if(Funcion.getPelicula() == pelicula and Funcion.getDia() >= dia and Funcion.getMes() == mes):
                     funciones.append(funcion)
             for funcion in self.getCartelera():
-                if(funcion.getPelicula() == pelicula and funcion.getMes() > mes):
+                if(Funcion.getPelicula() == pelicula and Funcion.getMes() > mes):
                     funciones.append(funcion)
 
         # Este es el que recibe dia, mes.
         elif(len(args) == 2):
             dia, mes = args
             for funcion in self.getCartelera():
-                if(funcion.getDia() == dia and funcion.getMes() == mes):
+                if(Funcion.getDia() == dia and Funcion.getMes() == mes):
                     funciones.append(funcion)
         elif(len(args) == 1):
     
@@ -74,14 +73,14 @@ class Autocine:
             if(type(args[0]) == int):
                 mes = args[0]
                 for funcion in self.getCartelera():
-                    if(funcion.getMes() == mes):
+                    if(Funcion.getMes() == mes):
                         funciones.append(funcion)    
            
             # Recibe cliente. 
             else:
                 cliente: Cliente = args[0]
                 for funcion in self.getCartelera():
-                   if(funcion.getPelicula().getGenero() == cliente.GeneroMasVisto()):
+                   if(Funcion.getPelicula().getGenero() == cliente.GeneroMasVisto()):
                        funciones.append(funcion)
                        
         return funciones
@@ -112,8 +111,8 @@ class Autocine:
     def verificarCliente(self, num: int) -> bool:
         lista : list = []
         
-        for cliente in self.getClientes():
-            lista.append(cliente.getCedula())
+        for Cliente in self.getClientes():
+            lista.append(Cliente.getId())
         
         return num in lista
     
@@ -126,7 +125,7 @@ class Autocine:
     def buscadorCliente(self, num : int):
         lista = self.getClientes()
         for cliente in lista:
-            if (int(cliente._cedula)== int(num)):
+            if (int(Cliente._id)== int(num)):
                 return cliente
             
         return None
@@ -140,7 +139,7 @@ class Autocine:
     def buscarSala(self, num):
         lista = self.getSalas()
         for sala in lista:
-            if (int(sala.getNumero())== int(num)):
+            if (int(Sala.getNumero())== int(num)):
                 return sala
             
         return None
@@ -154,7 +153,7 @@ class Autocine:
     def BuscadorPelicula(self, nombre):
         lista = self.getPeliculas()
         for pelicula in lista:
-            if (str(pelicula.getNombre())==nombre):
+            if (str(Pelicula.getNombre())==nombre):
                 return pelicula
             
         return None
@@ -168,8 +167,8 @@ class Autocine:
     def BuscadorFuncion(self,numero):
         lista=[]
         for funcion in self._cartelera:
-            lista.append(funcion.getNumero())
-            if funcion.getNumero()==int(numero):    #Si el numero de la funcion es igual al numero que se ingreso es la que se estaba buscando
+            lista.append(Funcion.getNumero())
+            if Funcion.getNumero()==int(numero): 
                 return funcion
             
         return None
@@ -184,9 +183,9 @@ class Autocine:
     def BuscadorTicket (self, num_puesto: int, funcion:Funcion):
         lista=[]
         for ticket in funcion.getTickets():
-            lista.append(ticket.getNum_puesto())
+            lista.append(Ticket.getNum_puesto())
 
-            if ticket.getNum_puesto == num_puesto:  
+            if Ticket.getNum_puesto == num_puesto:  
                 return ticket
             
         return None
