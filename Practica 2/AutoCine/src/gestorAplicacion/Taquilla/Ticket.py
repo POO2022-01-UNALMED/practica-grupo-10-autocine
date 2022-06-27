@@ -23,7 +23,7 @@ class Ticket:
         #		No recibe nada y devuelve un float el cual corresponde al calculo del precio del boleto 
         #		que depende del precio de la sala y el precio del puesto 
 
-        precio_t: float = self._funcion.getSala().getPrecio()+self._precio_puesto  #Se suma el precio de la sala y el precio de la silla
+        precio_t: float = self._funcion.getSala().getPrecio()+self._precio_puesto  #Se suma el precio de la sala y el precio del puesto
         return precio_t
     
         @staticmethod
@@ -32,73 +32,54 @@ class Ticket:
         total = self.calcularPrecio()
         self.setPrecioTotal(total)
 
-    def estado(self):
-        #	 Sin parÃ¡metros y retorna un String que corresponde al estado de disponibilidad
-        #	 del ticket	
-        #	 
-        if gestorAplicacion.Taquilla.Ticket._estado:
-            return "Libre"
-        return "Ocupado"
+    def setAtr_puesto(self, puesto):
 
+        ###Recibe el puessto con la que deseo asignarle los atributos de numero,tipo de silla y precio de silla  y no devuelve nada
+        self._num_puesto = puesto.getNumero()     #Se establece al atributo de num_puesto  el numero del puesto que recibe
+        self.setTipo_puesto(puesto.getTipo())     # Se establece al atributo tipo_puesto el tipo dl puesto que recibe 
+        self.setPrecio_puesto(puesto.getPrecio()) # Se establece al atributo precio_puesto el precio del puesto que recibe
 
-    def tipoString(self):
+    def tipoString(self) -> str:
+        
         #		Sin parametros  y retorna un String el cual indica el tipo de puesto del ticket
-        #		 
-        if self._tipo_puesto is gestorAplicacion.Salas.Puesto.Tipo.PREFERENCIAL:
-            return "P"
-        return "G"
-
-
-    # get y set
-
-
-
-    def getPrecio_puesto(self):
-        return gestorAplicacion.Taquilla.Ticket._precio_puesto
-
-    def getPrecioTotal(self):
-        return gestorAplicacion.Taquilla.Ticket._precioTotal
-
-    @staticmethod
-    def setPrecioTotal(precioTotal):
-        Ticket._precioTotal = precioTotal
-
-    @staticmethod
-    def isEstado():
-        return gestorAplicacion.Taquilla.Ticket._estado
-    @staticmethod
-    def setEstado(estado):
-        Ticket._estado = estado
-    @staticmethod
-    def getFuncion():
-        return gestorAplicacion.Taquilla.Ticket._funcion
-    def setFuncion(self, funcion):
-        Ticket._funcion = funcion
-
+        #	
+        
+        if(self._tipo_puesto == Tipo.PREFENCIAL):
+            return "P" 
+        return "G"     
+    # 
+    # getter and setters
+    # 
     def getNum_puesto(self):
         return self._num_puesto
+    def setNum_puesto(self, num_puesto):
+        self._num_puesto = num_puesto
 
-    def _set_puesto(self, puesto):
-        #		Recibe el puesto con el que se asignan los atributos de num,tipo
-        #		  y precio y no devuelve nada	
-        #		 
-
-        self._num_puesto = puesto.getNumero()
-        self.setTipo_puesto(puesto.getTipo())
-        self.setPrecio_puesto(puesto.getPrecio())
-
-    def setPrecio_puesto(self, precio):
-        Ticket._precio_puesto=precio
 
     def getTipo_puesto(self):
         return self._tipo_puesto
-
     def setTipo_puesto(self, tipo_puesto):
         self._tipo_puesto = tipo_puesto
 
-    @staticmethod
-    def getTicket():
-        return gestorAplicacion.Taquilla.Ticket.tickets
-    def setTicket(self, tickets):
-        Ticket.tickets = tickets
 
+    def getPrecioTotal(self):
+        return self._precioTotal
+    def setPrecioTotal(self, precioTotal):
+        self._precioTotal = precioTotal
+
+
+    def isEstado(self):
+        return self._estado
+    def setEstado(self, estado):
+        self._estado = estado
+
+
+    def getFuncion(self):
+        return self._funcion
+    def setFuncion(self, funcion):
+        self._funcion = funcion
+
+    def getPrecio_puesto(self):
+        return self._precio_puesto
+    def setPrecio_puesto(self, precio_puesto):
+        self._precio_puesto = precio_puesto
