@@ -5,6 +5,8 @@
 # * @author Jimena Uribe Giraldo.
 # * @summary En esta clase todo lo relacionado a Ticket (Boleto), puesto, precio, función
 # 
+
+
 class Ticket:
     
     def __init__(self, funcion, puesto):
