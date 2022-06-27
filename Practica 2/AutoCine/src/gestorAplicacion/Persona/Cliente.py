@@ -1,5 +1,7 @@
 ﻿from gestorAplicacion.Taquilla import *
-from gestorAplicacion.Autocine import *
+from gestorAplicacion.Taquilla.Ticket import Ticket
+from gestorAplicacion.Autocine.Autocine import Autocine
+from gestorAplicacion.Persona import *
 
 from typing import Collection
 from collections import Counter
@@ -7,7 +9,7 @@ from collections import Counter
 #*
 # * @author Jimena Uribe Giraldo.
 # * @summary Clase Cliente, lleva todo lo relativo a la información del espectador
-# *
+# 
 # 
 
 
@@ -19,7 +21,7 @@ class Cliente:
         self._id= id
         self._nombre = nombre
         self._edad = edad
-        autocine.agregarCliente(self)
+        Autocine.agregarCliente(self)
         self._autocine = autocine
 
     def GeneroMasVisto(self):
@@ -27,7 +29,7 @@ class Cliente:
 
         genreList = [] #lista con los generos que ha visto el cliente
         for ticket in self._historialCompras:
-            genreList.append(ticket.getFuncion().getPelicula().getGenero()) #Recorre el historial de compras del cliente y anexa los generos de los tickets
+            genreList.append(Ticket.getFuncion().getPelicula().getGenero()) #Recorre el historial de compras del cliente y anexa los generos de los tickets
 
         veces=Counter(genreList).items()   #lista para guardar la frecuencia de cada genero
 

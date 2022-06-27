@@ -57,7 +57,7 @@ class Sala2D(Sala):
         #	No recibe nada y devuelve un entero el cual corresponde a la cantidad de puestos
         #	disponibles
 
-        return len(super().get.puestos())
+        return len(super().getPuestos())
     
     def getCantidadPuestos(self):
         return len(super().getPuestos())

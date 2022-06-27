@@ -111,7 +111,7 @@ class Autocine:
     def verificarCliente(self, num: int) -> bool:
         lista : list = []
         
-        for Cliente in self.getClientes():
+        for cliente in self.getClientes():
             lista.append(Cliente.getId())
         
         return num in lista
