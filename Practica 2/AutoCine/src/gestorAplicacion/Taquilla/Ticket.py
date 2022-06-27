@@ -34,7 +34,7 @@ class Ticket:
 
     def setAtr_puesto(self, puesto):
 
-        ###Recibe el puessto con la que deseo asignarle los atributos de numero,tipo de silla y precio de silla  y no devuelve nada
+        ###Recibe el puessto con la que deseo asignarle los atributos de numero,tipo de puesto y precio de puesto  y no devuelve nada
         self._num_puesto = puesto.getNumero()     #Se establece al atributo de num_puesto  el numero del puesto que recibe
         self.setTipo_puesto(puesto.getTipo())     # Se establece al atributo tipo_puesto el tipo dl puesto que recibe 
         self.setPrecio_puesto(puesto.getPrecio()) # Se establece al atributo precio_puesto el precio del puesto que recibe
