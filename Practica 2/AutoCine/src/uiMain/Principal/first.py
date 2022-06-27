@@ -1,6 +1,6 @@
 #**
 #* @author: Jhon Ever Gallego Atehortua, Jimena Uribe Giraldo y Daniel Alejandro Giraldo Giraldo.
-#* @param: Clase ZonaA.
+#* @param: Clase firts.
 #* @summary: First será la ventana de inicio en donde se podrán ver las biografias de los programadores, fotos, opcion para salir de la aplicación  y un botón para ingresar a las funcionalidades del AutoCine.
 #**
 
