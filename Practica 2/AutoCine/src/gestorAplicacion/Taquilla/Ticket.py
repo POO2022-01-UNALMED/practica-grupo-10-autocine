@@ -7,48 +7,30 @@ from gestorAplicacion import Persona.Cliente
 # * @summary En esta clase todo lo relacionado a Ticket (Boleto), puesto, precio, función
 # 
 class Ticket:
-
-    # Serializacion.
-    _SERIALVERSIONUID = 1
-    tickets = None
-    @staticmethod
-    def _static_initializer():
-        gestorAplicacion.Taquilla.Ticket.tickets = []
-
-    _static_initializer()
-
-    #Atributos 
-
-    _precioTotal = 0
-    _estado = False
-    _funcion = None
-    _precio_puesto = 0
-
-
-    def __init__(self, funcion, puesto):
-        #instance fields found by Java to Python Converter:
+    
+        def __init__(self, funcion, puesto):
+        
+        self._estado : bool= True
+        self._funcion = funcion
         self._num_puesto = 0
-        self._tipo_puesto = None
-
-        Ticket._funcion = funcion
-        self._set_puesto(puesto)
-        Ticket._estado = True
-        Ticket._precioTotal = Ticket.calcularPrecio()
-
-    @staticmethod
-    def calcularPrecio():
+        self._precio_puesto = 0
+        self.setAtr_puesto(puesto)
+        self._precioTotal =  self.calcularPrecio()
+        
+    # Funciones
+    
+    def calcularPrecio(self) -> float:
         #		No recibe nada y devuelve un float el cual corresponde al calculo del precio del boleto 
         #		que depende del precio de la sala y el precio del puesto 
 
-        precio_t = Funcion.getSala().getPrecio() + gestorAplicacion.Taquilla.Ticket._precio_puesto # Se suma el precio de la sala y el precio de la silla
-
+        precio_t: float = self._funcion.getSala().getPrecio()+self._precio_puesto  #Se suma el precio de la sala y el precio de la silla
         return precio_t
-
-    @staticmethod
+    
+        @staticmethod
     def calcularPrecioDefinitivo(cliente):
 
-        total = gestorAplicacion.Taquilla.Ticket.calcularPrecio()
-        gestorAplicacion.Taquilla.Ticket.setPrecioTotal(total)
+        total = self.calcularPrecio()
+        self.setPrecioTotal(total)
 
     def estado(self):
         #	 Sin parÃ¡metros y retorna un String que corresponde al estado de disponibilidad
@@ -60,7 +42,7 @@ class Ticket:
 
 
     def tipoString(self):
-        #		Sin parÃ¡metros  y retorna un String el cual indica el tipo de puesto del ticket
+        #		Sin parametros  y retorna un String el cual indica el tipo de puesto del ticket
         #		 
         if self._tipo_puesto is gestorAplicacion.Salas.Puesto.Tipo.PREFERENCIAL:
             return "P"
