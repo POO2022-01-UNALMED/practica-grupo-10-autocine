@@ -1,6 +1,5 @@
-﻿from gestorAplicacion import Salas.Puesto
-from gestorAplicacion import Salas.Puesto.Tipo
-from gestorAplicacion import Persona.Cliente
+﻿from gestorAplicacion.Salas.Puesto import Tipo
+
 
 #*
 # * @author Jimena Uribe Giraldo.
@@ -8,7 +7,7 @@ from gestorAplicacion import Persona.Cliente
 # 
 class Ticket:
     
-        def __init__(self, funcion, puesto):
+    def __init__(self, funcion, puesto):
         
         self._estado : bool= True
         self._funcion = funcion
@@ -26,7 +25,7 @@ class Ticket:
         precio_t: float = self._funcion.getSala().getPrecio()+self._precio_puesto  #Se suma el precio de la sala y el precio del puesto
         return precio_t
     
-        @staticmethod
+    @staticmethod
     def calcularPrecioDefinitivo(cliente):
 
         total = self.calcularPrecio()
