@@ -15,12 +15,12 @@ class Sala3D(Sala):
     # Atributos.
     def __init__(self, *args):
         if(len(args) == 4):
-            filas, columnas,candidadgafas, cine = args
-            super().__init__(filas, columnas, 0, 5000,cine)
+            filas, columnas,candidadgafas, autocine = args
+            super().__init__(filas, columnas, 0, 5000,autocine)
             self._cantidadgafas = candidadgafas
         elif(len(args) == 3):
-            filas, columnas, cine = args
-            super().__init__(filas, columnas, 0,5000, cine)
+            filas, columnas, autocine = args
+            super().__init__(filas, columnas, 0,5000, autocine)
             self._cantidadgafas = filas*columnas
             
             
