@@ -11,4 +11,4 @@ Integrantes (Grupo 2 / Equipo 10):
 * Jhon Ever Gallego Atehortua - jhgallegoa@unal.edu.co 
 
 Universidad Nacional de Colombia, Sede Medellín.
-Junio 2022
+Junio 2022.
