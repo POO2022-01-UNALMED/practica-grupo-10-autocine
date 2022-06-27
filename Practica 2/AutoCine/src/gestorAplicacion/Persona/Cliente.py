@@ -6,92 +6,65 @@ from gestorAplicacion.Autocine import *
 # * @summary Clase Cliente, lleva todo lo relativo a la información del espectador
 # *
 # 
+
+
+
 class Cliente:
-
-    # Serializacion.
-    _SERIALVERSIONUID = 1
-    clientess = None
-    @staticmethod
-    def _static_initializer():
-        gestorAplicacion.Persona.Cliente.clientess = []
-
-    _static_initializer()
-
-    #Atributos
-    _edad = 0
-    _historialCompras = [] #una lista con los boletos que ha comprado el cliente en su vida
-
-
-    #Constructores
-    def __init__(self, id, nombre, edad, autocine):
-        #instance fields found by Java to Python Converter:
-        self._id = 0
-        self._nombre = None
-        self._autocine = None
-
-        self._id = id
+    
+    def __init__(self,id,nombre,edad,autocine):
+        self._historialCompras = [] #una lista con los boletos que ha comprado el cliente en el cine a traves de su vida
+        self._id= id
         self._nombre = nombre
-        Cliente._edad = edad
-        self._autocine=autocine
+        self._edad = edad
+        autocine.agregarCliente(self)
+        self._autocine = autocine
 
     def GeneroMasVisto(self):
-        #		
-        #		No recibe nada y devuelve string del género más visto del cliente
-        #		 
+        #No recibe nada y devuelve string del género más visto del cliente
+
         genreList = [] #lista con los generos que ha visto el cliente
-        for ticket in gestorAplicacion.Persona.Cliente._historialCompras:
-            Ticket.getFuncion()
-            genreList.append(Funcion.getPelicula().getGenero()) #Recorre el historialdel cliente y anexa sus generos
-        veces = [] #lista para guardar la frecuencia de cada genero
-        for genre in genreList:
-            occ = Collections.frequency(genreList, genre) #De la lista de géneros extrae la frecuencia
-            veces.append(occ)
+        for ticket in self._historialCompras:
+            genreList.append(ticket.getFuncion().getPelicula().getGenero()) #Recorre el historial de compras del cliente y anexa los generos de los tickets
 
-        return genreList[(veces.index(Collections.max(veces)) if Collections.max(veces) in veces else -1)] #devuelve el género más visto
+        veces=Counter(genreList).items()   #lista para guardar la frecuencia de cada genero
+
+        occ=Counter(genreList).values() #De la lista de géneros extrae la frecuencia de cada elemento
+        valor_max=max(occ)
+        
+        for genero  in cuenta:
+            if genero[1]==valor_max:
+                return genero[0]
 
 
 
-    #set y get
+    #
+    #Getting and setting
+    #
+    def getId(self):
+        return self._id
+    def setId(self, id):
+        self._cedula = id
+
     def getNombre(self):
         return self._nombre
-
     def setNombre(self, nombre):
         self._nombre = nombre
 
-    @staticmethod
-    def getEdad():
-        return gestorAplicacion.Persona.Cliente._edad
-
+    def getEdad(self):
+        return self._edad
     def setEdad(self, edad):
-        Cliente._edad = edad
+        self._edad = edad
 
-    def getId(self):
-        return self._id
+  
 
-    def setId(self, id):
-        self._id = id
-
-
-    @staticmethod
-    def getHistorialCompras():
-        return gestorAplicacion.Persona.Cliente._historialCompras
+    def getHistorialCompras(self):
+        return self._historialCompras
     def setHistorialCompras(self, historialCompras):
-        Cliente._historialCompras = historialCompras
+        self._historialCompras = historialCompras
 
 
     def getAutocine(self):
         return self._autocine
-
-    def setAutocine(self, autocine):
+    def setAutoine(self, autocine):
         self._autocine = autocine
-
-    @staticmethod
-    def getClientes():
-        return gestorAplicacion.Persona.Cliente.clientess
-
-
-    def toString(self):
-
-        return "Cliente: " + self._nombre + "-" + str(gestorAplicacion.Persona.Cliente._edad)
-
-
+    
