@@ -1,6 +1,9 @@
 ﻿from gestorAplicacion.Taquilla import *
 from gestorAplicacion.Autocine import *
 
+from typing import Collection
+from collections import Counter
+
 #*
 # * @author Jimena Uribe Giraldo.
 # * @summary Clase Cliente, lleva todo lo relativo a la información del espectador
@@ -31,7 +34,7 @@ class Cliente:
         occ=Counter(genreList).values() #De la lista de géneros extrae la frecuencia de cada elemento
         valor_max=max(occ)
         
-        for genero  in cuenta:
+        for genero  in veces:
             if genero[1]==valor_max:
                 return genero[0]
 
