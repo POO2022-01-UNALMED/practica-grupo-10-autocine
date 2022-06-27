@@ -4,12 +4,12 @@
 #* @summary: Clase Autocine. Clase que contiene as salas, funciones, peliculas, cientes y metodos para a creación, modificación y observación de los mismos.
 #**
 
-from gestionAplicacion.taquilla.funcion import Funcion
-from gestionAplicacion.taquilla.pelicula import Pelicula
-from gestionAplicacion.taquilla.horario import Horario
-from gestionAplicacion.taquilla.ticket import Ticket
-from gestionAplicacion.salas.saa import Sala
-from gestionAplicacion.autocines.cliente import Cliente
+from gestorAplicacion.Taquilla.Funcion import Funcion
+from gestorAplicacion.Taquilla.Pelicula import Pelicula
+from gestorAplicacion.Taquilla.Funcion import Horario
+from gestorAplicacion.Taquilla.Ticket import Ticket
+from gestorAplicacion.Salas.Sala import Sala
+from gestorAplicacion.Persona.Cliente import Cliente
 
 # Clase.
 class Autocine:

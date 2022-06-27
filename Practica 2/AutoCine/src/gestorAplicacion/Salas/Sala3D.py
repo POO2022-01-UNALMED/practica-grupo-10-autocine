@@ -6,8 +6,8 @@
 
 from fileinput import filename
 from importlib.metadata import FileHash
-from gestionAplicacion.salas.sala import Sala
-from gestionAplicacion.salas.puesto import Puesto
+from gestorAplicacion.Salas.Sala import Sala
+from gestorAplicacion.Salas.Puesto import Puesto
 
 # Clase.
 class Sala3D(Sala):
