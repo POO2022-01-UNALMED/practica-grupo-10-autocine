@@ -4,8 +4,8 @@
 # * @summary Clase que tiene la imformacion relacionada con las peliculas.
 # 
 
-from gestorAplicacion import Autocine.Autocine
-from gestorAplicacion import Salas.Sala
+from gestorAplicacion.Autocine.Autocine import Autocine
+from gestorAplicacion.Salas.Sala import Sala
 
 
 # clase
@@ -28,7 +28,7 @@ class Pelicula:
         self._lenguaje = lenguaje
         self._clasificacion = clasificacion
         self._autocine = autocine
-        gestorAplicacion.Autocine.Autocine.agregarPelicula(self)
+        Autocine.agregarPelicula(self)
 
     # gets y sets
     def getNombre(self):
@@ -57,7 +57,7 @@ class Pelicula:
         self._clasificacion = clasificacion
     @staticmethod
     def getPeliculas():
-        return gestorAplicacion.Taquilla.Pelicula.peliculass
+        return Pelicula.peliculass
 
     @staticmethod
     def setPeliculas(peliculass):
