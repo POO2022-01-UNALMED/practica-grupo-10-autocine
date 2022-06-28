@@ -16,13 +16,13 @@ class First(Frame):
         self.autocine = autocine
         super().__init__(master)
         
-        frame1=Frame(self, width=100, height=200, bg="#FFA07A") # Frame naranja. 
+        frame1=Frame(self, width=100, height=200, bg="#99CCFF") # Frame azul claro. 
         frame1.pack(fill=Y, side=LEFT)   # Se hace responsive verticalmente.
 
         WAndH={"height":200, "width":100}
         frame2=Frame(self, **WAndH) 
 
-        frame3=Frame(frame1, width=100, height=70, bg="yellow") # Frame del saludo de bienvenida.
+        frame3=Frame(frame1, width=100, height=70, bg="8E8E8E") # Frame del saludo de bienvenida.
         frame3.grid(column = 0, row= 0, padx=3, pady=3, columnspan=4)
 
         # Se brinda un saludo de bienvenida.
@@ -31,7 +31,7 @@ class First(Frame):
         self.saludo.grid(column=0, row=0, padx=3, pady=3)
 
         # Se crea el frame donde se presentan fotos relacionados al cine.
-        frame4=Frame(frame1, width=100, height=130, bg="#FF6A6A")  # El que es rojo.
+        frame4=Frame(frame1, width=100, height=130, bg="#FA9169")  # El que es rosadito.
         frame4.grid(column=0, row= 1, padx=3, pady=3, columnspan=4)
 
         # Se muestra la primera foto por defecto.
