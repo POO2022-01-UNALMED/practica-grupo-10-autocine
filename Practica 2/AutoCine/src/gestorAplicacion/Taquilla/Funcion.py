@@ -10,7 +10,7 @@ from tkinter import NONE
 from xmlrpc.client import Boolean
 from enum import Enum
 
-from gestorAplicacion.Autocine.Autocine import Autocine
+from gestorAplicacion.Autocine import Autocine
 from gestorAplicacion.Taquilla.Funcion import Horario
 from gestorAplicacion.Taquilla.Ticket import Ticket
 from gestorAplicacion.Salas.Sala import Sala
