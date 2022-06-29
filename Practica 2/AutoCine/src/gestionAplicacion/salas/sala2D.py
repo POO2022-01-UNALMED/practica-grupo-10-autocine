@@ -5,6 +5,13 @@
 from gestionAplicacion.salas.sala import Sala
 from gestionAplicacion.salas.silla import Silla
 
+#*
+# * @author Jimena Uribe Giraldo
+# * @param Clase Sala2D.
+# * @summary Clase que que hereda de la Clase Sala. En esta se crean los puestos para la Sala 2D.
+# 
+
+
 class Sala2D(Sala):
 
 
@@ -22,21 +29,16 @@ class Sala2D(Sala):
         return "2D"
 
     def cantidadSillas(self):
-        '''
-        No recibe nada y devuelve un entero el cual corresponde a la cantidad de sillas
-	    disponibles para la creacion de los boletos de la funcion es decir la cantidad de 
-	    sillas
-        '''
+        #	No recibe nada y devuelve un entero el cual corresponde a la cantidad de puestos
+        #	disponibles
         return len(super().getSillas())
     
     def getCantidadSillas(self):
         return len(super().getSillas())
     
     def crearSilleteria(self):
-        '''
-        No recibe ningun parametro y no retorna nada
-	    Es la encargada de crear cada silla dependiendo la cantidad de filasvip, filas, y columnas
-        '''
+              #	No recibe ningun parametro y no retorna nada
+        #	Crea cada puesto según la cantidad de filas prefencial, filas, y columnas
         total: int =  int(self._filas)*int(self._columnas)  #Numero de sillas 
         totalvip: int = int(self._filasvip)*int(self._columnas) #Numero de sillas vip(se va reduciendo con cada nueva silla vip creada)
 
