@@ -4,6 +4,13 @@
 from typing import Collection
 from collections import Counter
 
+
+#*
+# * @author Jimena Uribe Giraldo.
+# * @summary Clase Cliente, lleva todo lo relativo a la información del espectador
+# 
+# 
+
 class Cliente:
 
     def __init__(self,cedula,nombre,edad,ocupacion,cine, referido = None):
@@ -20,24 +27,24 @@ class Cliente:
             self._descuento += 0.1
 
 
-    #Aplicacion de descuentos
+    #Descuentos
 
     def descuentoCliente(self):
-        #Este metodo no recibe nada, pero devuelve un String informando que se le realizo el descuento al cliente mas valioso o al que tenga referidos
-        self._cine.mostValueClient()    #se le otorga un descuento del 20% al cliente que mas ha comprado
+        
+        self._cine.mostValueClient()    #Descuento del 20% al cliente que mas ha comprado
         
         if (self._descuento<=0.39 and self._referidos>0):#Si los descuentos no sobrepasan el 0.4, se aplican
 
             self._descuento+=0.01*self._referidos
         return "Descuento aplicado"
 
-    #Reflejar la pelicula más vista
+    #La pelicula más vista
     def mostWatchedGenre(self):
         #No recibe nada pero devuelve una string con el genero mas visto del cliente
 
-        genreList=[]    #lista para tener los generos que ha visto el cliente
+        genreList=[]    ##lista con los generos que ha visto el cliente
         for boleto in self._historialCompras:
-            genreList.append(boleto.getFuncion().getPelicula().getGenero()) #Recorre el historial de compras del cliente y anexa de los boletos sus generos
+            genreList.append(boleto.getFuncion().getPelicula().getGenero()) #Recorre el historial de compras del cliente y anexa los generos de los tickets
 
         cuenta=Counter(genreList).items()   #lista para guardar la frecuencia de cada genero
 
@@ -48,16 +55,13 @@ class Cliente:
             if genero[1]==valor_max:
                 return genero[0]
 
-        #return genreList[cuenta.index(Collections.max(cuenta))] 
-
-
     def referidos(self):
         #No recibe ni devuelve nada, su proposito es sumar referidos al cliente y llamar el metodo para aplicar el descuento por cada referido
         
         self._referidos+=1
         self.descuentoCliente()    
     #
-    #Getting and setting
+    #Get y Set
     #
     def getCedula(self):
         return self._cedula
