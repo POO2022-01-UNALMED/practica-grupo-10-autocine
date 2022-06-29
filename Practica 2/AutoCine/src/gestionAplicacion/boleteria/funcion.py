@@ -1,31 +1,48 @@
-
+#**
+#* @author Jhon Ever Gallego Atehortua.
+#* @param Clase Funcion.
+#* @summary Clase que representa la funcion en la que se da una pelicula.
+#**
 
 from code import interact
 from hashlib import new
 from tkinter import NONE
 from xmlrpc.client import Boolean
-
 from gestionAplicacion.boleteria.horario import Horario
 from gestionAplicacion.boleteria.boleto import Boleto
 from gestionAplicacion.salas.sala import Sala
 
+# Clase.
 class Funcion:
-    
+
+    # Atributos.
     def __init__(self,dia,mes,horario,pelicula,sala,cine):
-        self._boletos = []  #lista de los boletos correspondientes a las sillas de la sala de la funcion
+        self._boletos = []  
         self._dia:int = dia
         self._mes:int = mes
         self._horario = horario
         self._pelicula = pelicula
-        self.setSala(sala)  #agrega la funcion a sala y a el cine
+        self.setSala(sala)  
         self.setCine(cine)
         
         sala.agregarFuncion(self)
-        self._numero = len(cine.getCartelera()) +1 #aumenta la cantidad de funciones creadas
+        self._numero = len(cine.getCartelera()) +1 
         self._cantidadBoletosVendidos:int=0
         cine.agregarFuncion(self)
-        self.crearBoleteria()           #Se crea la boleteria de la funcion
+        self.crearBoleteria()           
 
+
+    # Metodos.
+	#**
+	#* @param dia
+	#* @param mes
+	#* @param horario
+	#* @param pelicula
+	#* @param num_sala
+	#* @param autocine
+	#* @summary Recibe una fecha: (dia, mes, horario), pelicula, numero de sala y el autocine. 
+	#* @return Una funcion para una pelicula.
+	#**
     @classmethod
     def crearFuncion(cls,dia:int,mes:int,horario:Horario,pelicula,num_sala:int,cine): #devuelve una funcion o none
         sala = cine.buscarSala(num_sala)
@@ -55,105 +72,99 @@ class Funcion:
             resultado += "\n\n"
         return resultado
 
-    def crearBoleteria(self):
-        #Se crea la boletería de las sillas de una sala
 
-        sillas = self._sala.getSillas()     #lista de las sillas de la sala correspondiente
-        disponibles:int=self._sala.cantidadSillas() #ignorar, catidadSillas() se encuentra en cada subclase, por lo que acá marca el error
+    #**
+	#* @summary Metodo que se encarga de crear un boleto para cada puesto.
+	#**
+    def crearBoleteria(self):
+        sillas = self._sala.getSillas()     
+        disponibles:int=self._sala.cantidadSillas() 
         total:int=len(self._sala.getSillas())
         for i in range(total):
             if(disponibles>0):
-                boleto:Boleto= Boleto(self,sillas[i])       #si es mayor que 0 crea el boleto, lo anade a la lista boletos y disponibles-
+                boleto:Boleto= Boleto(self,sillas[i])      
                 self._boletos.append(boleto)
                 disponibles-=1
     
+    
+    #**
+	#* @summary Metodo que se encarga de la disponibilidad de un puesto en una sala.
+	#* @return La disponibilidad de un puesto y su tipo.
+	#**
     def verDisponibilidad(self):
-        # En este caso la funcion devuelve una lista de strings, para agregar cada strings
-        total =[]   #lista de filas
-
-        #for para hacer una lista de listas, cada lista corresponde a una fila de boletos
+        total =[] 
         for boleto in self._boletos:
-            if boleto!=None:                                #si el boleto no es nulo, crea el string y se anade a la fila
+            if boleto!=None:                             
                 tupla_boleto:tuple=(boleto.isDisponibilidad(),boleto.tipoString()+str(boleto.getNum_silla()))       #se crea un string de la forma disponibilidad/tipo/numerosilla
                 total.append(tupla_boleto)
-
         return total
 
+
+    #**
+	#* @param ticket
+	#* @param cliente
+	#* @summary Recibe ticket para cambiar su estado y un cliente al cual se le asigna. Metodo para vender un ticket.
+	#* @return Un Boolen de si se pudo o no vender un ticket. Retorna True o False segun sea el caso.
+	#**
     def VentaBoleto(self,boleto,cliente)->bool:
-        #Retorna un booleano aumenta las ganancias del cine y añade a cantidad de boletos vendidos de la pelicula
-
         if (boleto.isDisponibilidad()==True and cliente.getEdad()>=self.getPelicula().getClasificacion()):
-            boleto.setDisponibilidad(False) #Cuando se vende cambia la disponibilidad del boleto a false
-            cliente.getHistorialCompras().append(boleto)    #Se añade al historial de compra del cliente 
-            self._cantidadBoletosVendidos+=1        #Se suma uno al atributo cantidadBoletosVendidos
-            boleto.calcularPrecioDefinitivo(cliente)    #Se mira si el cliente posee un descuento para aplicar
-
+            boleto.setDisponibilidad(False) 
+            cliente.getHistorialCompras().append(boleto)   
+            self._cantidadBoletosVendidos+=1        
+            boleto.calcularPrecioDefinitivo(cliente)   
             ganancia:float=self._cine.getDineroGanado()+boleto.getPrecioTotal()
-
             self._cine.setDineroGanado(ganancia)
             self._pelicula.anadirCantidadBoletos()
-
             return True
         else:
             return False
 
 
-        
-#Getter y Setter
-
+    # Getters and Setter.s
     def getDia(self):
         return self._dia
     def setDia(self, dia):
         self._dia = dia
-
 
     def getMes(self):
         return self._mes
     def setMes(self, mes):
         self._mes = mes
 
-
     def getHorario(self):
         return self._horario
     def setHorario(self, horario):
         self._horario = horario
-
 
     def getPelicula(self):
         return self._pelicula
     def setPelicula(self, pelicula):
         self._pelicula = pelicula
 
-
     def getSala(self):
         return self._sala
     def setSala(self, sala):
         self._sala = sala
-
 
     def getBoletos(self):
         return self._boletos
     def setBoletos(self, boletos):
         self._boletos = boletos
 
-
     def getCantidadBoletosVendidos(self):
         return self._cantidadBoletosVendidos
     def setCantidadBoletosVendidos(self, cantidadBoletosVendidos):
         self._cantidadBoletosVendidos = cantidadBoletosVendidos
-
 
     def getCine(self):
         return self._cine
     def setCine(self, cine):
         self._cine = cine
 
-
     def getCantidadfunciones(self):
         return self._cantidadFunciones
     def setCantidadfunciones(self, cantidadFunciones):
         self._cantidadFunciones = cantidadFunciones
-
 
     def getNumero(self):
         return self._numero
