@@ -3,6 +3,11 @@
 from gestionAplicacion.salas.tipo import Tipo
 
 
+#*
+# * @author Jimena Uribe Giraldo.
+# * @summary En esta clase todo lo relacionado a Ticket (Boleto), puesto, precio, función
+# 
+
 class Boleto:
 
     def __init__(self, funcion, silla):
@@ -17,10 +22,9 @@ class Boleto:
     # Funciones
 
     def calcularPrecio(self) -> float:
-        ''' No recibe nada y devuelve un float el cual corresponde al calculo del precio bruto del boleto 
-	    el cual depende del precio de la sala y el precio de la silla '''
-
-        bruto: float = self._funcion.getSala().getPrecio()+self._precio_silla   #Se suma el precio de la sala y el precio de la silla
+         #		No recibe nada y devuelve un float el cual corresponde al calculo del precio del boleto 
+        #		que depende del precio de la sala y el precio del puesto 
+        bruto: float = self._funcion.getSala().getPrecio()+self._precio_silla   #Se suma el precio de la sala y el precio del puesto
         return bruto
 
     def calcularPrecioDefinitivo(self, cliente):
@@ -32,21 +36,19 @@ class Boleto:
 
     def setAtr_silla(self, silla):
 
-        '''Recibe la silla con la que deseo asignarle los atributos de numero,tipo de silla y precio de silla  y no devuelve nada	
-        '''
-        self._num_silla = silla.getNumero()     #Se establece al atributo de num_silla  el numero de la silla que recibe
-        self.setTipo_silla(silla.getTipo())     # Se establece al atributo tipo_silla el tipo de la silla que recibe 
-        self.setPrecio_silla(silla.getPrecio()) # Se establece al atributo precio_silla el precio de la silla que recibe
+        ###Recibe el puessto con la que deseo asignarle los atributos de numero,tipo de puesto y precio de puesto  y no devuelve nada
+        self._num_silla = silla.getNumero()     #Se establece al atributo de num_puesto  el numero del puesto que recibe
+        self.setTipo_silla(silla.getTipo())     # Se establece al atributo tipo_puesto el tipo dl puesto que recibe 
+        self.setPrecio_silla(silla.getPrecio()) # Se establece al atributo precio_puesto el precio del puesto que recibe
 
     def tipoString(self) -> str:
-        '''
-        No recibe nada  y  devuelve un String el cual indica si el tipo de la silla al cual esta relacionado el boleto
-        '''
+         #		Sin parametros  y retorna un String el cual indica el tipo de puesto del ticket
+        #
         if(self._tipo_silla == Tipo.VIP):
-            return "P-" #El tipo de la silla es VIP retornara V-
-        return "S-"     # En caso de que sea sencilla retornara S-
+            return "P-" #El tipo de la silla es PREFERENCIAL retornara P-
+        return "G-"     # En caso de que sea GENERAL retornara G-
     # 
-    # getter and setters
+    # Get y set
     # 
     def getNum_silla(self):
         return self._num_silla
