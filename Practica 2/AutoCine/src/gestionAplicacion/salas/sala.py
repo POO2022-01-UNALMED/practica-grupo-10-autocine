@@ -1,4 +1,8 @@
-
+#**
+#* @author Daniel Alejandro Giraldo Giraldo.
+#* @param Clase Sala.
+#* @summary Clase que describle la estructura de una sala.
+#**
 
 from sys import int_info
 

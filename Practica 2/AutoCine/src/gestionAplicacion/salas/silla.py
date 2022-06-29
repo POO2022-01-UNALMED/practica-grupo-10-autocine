@@ -1,4 +1,8 @@
-
+#**
+#* @author Daniel Alejandro Giraldo Giraldo.
+#* @param Clase Silla.
+#* @summary Clase que describle la estructura de una silla.
+#**
 
 
 from gestionAplicacion.salas.tipo import Tipo

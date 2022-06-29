@@ -1,4 +1,8 @@
-
+#**
+#* @author Daniel Alejandro Giraldo Giraldo.
+#* @param Clase Pelicula.
+#* @summary Clase que describle la estructura de las peliculas.
+#**
 
 from tokenize import String
 
